@@ -1,0 +1,8 @@
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\TransparentTextBox\TransparentTextBox\bin\Debug\TransparentTextBox.exe.config
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\TransparentTextBox\TransparentTextBox\bin\Debug\TransparentTextBox.exe
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\TransparentTextBox\TransparentTextBox\bin\Debug\TransparentTextBox.pdb
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\TransparentTextBox\TransparentTextBox\obj\Debug\TransparentTextBox.Properties.Resources.resources
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\TransparentTextBox\TransparentTextBox\obj\Debug\TransparentTextBox.csproj.GenerateResource.cache
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\TransparentTextBox\TransparentTextBox\obj\Debug\TransparentTextBox.csproj.CoreCompileInputs.cache
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\TransparentTextBox\TransparentTextBox\obj\Debug\TransparentTextBox.exe
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\TransparentTextBox\TransparentTextBox\obj\Debug\TransparentTextBox.pdb

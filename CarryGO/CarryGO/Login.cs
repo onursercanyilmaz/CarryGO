@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
+using CarryGO.Classes;
 
 namespace CarryGO
 {
@@ -27,10 +28,16 @@ namespace CarryGO
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();
+
+            
+            
         }
 
-      
-
-       
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HelpPage helpPage = new HelpPage();
+            helpPage.Show();
+        }
     }
 }

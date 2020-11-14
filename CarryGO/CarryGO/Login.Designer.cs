@@ -87,6 +87,7 @@ namespace CarryGO
             this.buttonHelp.Size = new System.Drawing.Size(90, 91);
             this.buttonHelp.TabIndex = 2;
             this.buttonHelp.UseVisualStyleBackColor = false;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
             // txtPassword
             // 

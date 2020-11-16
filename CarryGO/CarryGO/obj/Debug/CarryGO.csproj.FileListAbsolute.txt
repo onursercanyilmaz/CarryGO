@@ -14,3 +14,6 @@ C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\Int
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.csproj.ResolveComReference.cache
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.HelpPage.resources
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.AddEmployeePage.resources
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\bin\Debug\CarryGODB.mdf
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\bin\Debug\CarryGODB_log.ldf

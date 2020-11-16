@@ -36,9 +36,9 @@ namespace CarryGO
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonEnter = new System.Windows.Forms.Button();
             this.buttonHelp = new System.Windows.Forms.Button();
-            this.txtPassword = new CarryGO.TransparentTextBox();
-            this.transparentTextBox1 = new CarryGO.TransparentTextBox();
             this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.transparentTextBox1 = new CarryGO.TransparentTextBox();
+            this.txtPassword = new CarryGO.TransparentTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,6 +89,26 @@ namespace CarryGO
             this.buttonHelp.UseVisualStyleBackColor = false;
             this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(94, 402);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
+            this.axWindowsMediaPlayer1.TabIndex = 5;
+            // 
+            // transparentTextBox1
+            // 
+            this.transparentTextBox1.BackColor = System.Drawing.Color.Transparent;
+            this.transparentTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.transparentTextBox1.Font = new System.Drawing.Font("Arial", 16F);
+            this.transparentTextBox1.Location = new System.Drawing.Point(585, 170);
+            this.transparentTextBox1.Name = "transparentTextBox1";
+            this.transparentTextBox1.Size = new System.Drawing.Size(193, 31);
+            this.transparentTextBox1.TabIndex = 4;
+            this.transparentTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.Transparent;
@@ -102,30 +122,11 @@ namespace CarryGO
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
-            // transparentTextBox1
-            // 
-            this.transparentTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.transparentTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.transparentTextBox1.Font = new System.Drawing.Font("Arial", 16F);
-            this.transparentTextBox1.Location = new System.Drawing.Point(585, 170);
-            this.transparentTextBox1.Name = "transparentTextBox1";
-            this.transparentTextBox1.Size = new System.Drawing.Size(193, 31);
-            this.transparentTextBox1.TabIndex = 4;
-            this.transparentTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // axWindowsMediaPlayer1
-            // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(94, 402);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
-            this.axWindowsMediaPlayer1.TabIndex = 5;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::CarryGO.Properties.Resources.loginScreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(880, 490);

@@ -113,6 +113,66 @@ namespace CarryGO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2020_11_18_WELCOME {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_2020-11-18 WELCOME", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2020_11_18_WELCOME_1_ {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_2020-11-18 WELCOME(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2020_11_19_WELCOME_1_ {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_2020-11-19 WELCOME(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2020_11_19_WELCOME_2_ {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_2020-11-19 WELCOME(2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2020_11_19_WELCOME_3_ {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_2020-11-19 WELCOME(3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2020_11_19_WELCOME_4_ {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_2020-11-19 WELCOME(4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap textBoxBack {
             get {
                 object obj = ResourceManager.GetObject("textBoxBack", resourceCulture);

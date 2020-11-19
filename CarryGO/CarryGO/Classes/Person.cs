@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using CarryGO.Classes;
 using CarryGO.Properties;
 using System.Data;
+using System.Windows.Forms;
 
 namespace CarryGO.Classes
 {
-    class Person //Main Class for Employee and Customer
+    public  abstract class Person //Main Class for Employee and Customer
     {
         string firstName;
         string lastName;
@@ -31,13 +32,17 @@ namespace CarryGO.Classes
         public string Address { get => address; set => address = value; }
         public long Phone { get => phone; set => phone = value; }
 
-/*
-        public void Add() { }
-        public void Save() { }
-        public void Delete() { }
-        public void Update() { }
-        public void Search() { }
+        public virtual void View(DataGridView dgv) { }
+        public virtual void Add(TextBox one, TextBox two, TextBox three, TextBox four, TextBox five, TextBox six, ComboBox cone, ComboBox ctwo, Label error) { }
+        public virtual void Save() { }
+        public virtual void Delete(DataGridView dgv, Label error, TextBox IDBox) { }
+        public virtual void Update(TextBox one, TextBox two, TextBox three, TextBox four, TextBox five, TextBox six, ComboBox cone, ComboBox ctwo, Label error, TextBox IDBox) { }
+        public virtual void SearchByID(TextBox id, DataGridView dgv) { }
+        public virtual void SearchByName(TextBox name, DataGridView dgv) { }
+        public virtual void Login(TextBox id, TextBox password, Label error, Form form) { }
+        public virtual void Logout() { }
 
-*/
+
+
     }
 }

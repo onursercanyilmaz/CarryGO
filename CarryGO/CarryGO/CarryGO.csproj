@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -61,36 +61,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEmployeePage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddEmployeePage.Designer.cs">
-      <DependentUpon>AddEmployeePage.cs</DependentUpon>
-    </Compile>
     <Compile Include="CarryGODBDataSet.Designer.cs">
+      <DependentUpon>CarryGODBDataSet.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CarryGODBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddEmployeePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEmployeePage.Designer.cs">
+      <DependentUpon>AddEmployeePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Employee.cs" />
     <Compile Include="Classes\Person.cs" />
-    <Compile Include="HelpPage.cs">
+    <Compile Include="Forms\HelpPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HelpPage.Designer.cs">
+    <Compile Include="Forms\HelpPage.Designer.cs">
       <DependentUpon>HelpPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.cs">
+    <Compile Include="Forms\MainPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainPage.Designer.cs">
+    <Compile Include="Forms\MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -98,13 +98,13 @@
     <Compile Include="Classes\TransparentTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="AddEmployeePage.resx">
+    <EmbeddedResource Include="Forms\AddEmployeePage.resx">
       <DependentUpon>AddEmployeePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HelpPage.resx">
+    <EmbeddedResource Include="Forms\HelpPage.resx">
       <DependentUpon>HelpPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -117,6 +117,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="App.config" />
     <None Include="CarryGODBDataSet.xsc">
       <DependentUpon>CarryGODBDataSet.xsd</DependentUpon>
     </None>
@@ -137,9 +138,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\loginScreen.png" />
@@ -184,6 +182,12 @@
       <DependentUpon>CarryGODB.mdf</DependentUpon>
     </Content>
     <Content Include="Items\welcometoCarryGo.mp3" />
+    <None Include="Resources\Screenshot_2020-11-19 WELCOME%284%29.png" />
+    <None Include="Resources\Screenshot_2020-11-19 WELCOME%283%29.png" />
+    <None Include="Resources\Screenshot_2020-11-19 WELCOME%281%29.png" />
+    <None Include="Resources\Screenshot_2020-11-19 WELCOME%282%29.png" />
+    <None Include="Resources\Screenshot_2020-11-18 WELCOME%281%29.png" />
+    <None Include="Resources\Screenshot_2020-11-18 WELCOME.png" />
     <None Include="Resources\addEmp.png" />
     <None Include="Resources\addEmployeeButton.png" />
     <None Include="Resources\WELCOME.png" />

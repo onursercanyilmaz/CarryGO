@@ -54,12 +54,13 @@ namespace CarryGO
             IDBox.Text = dataEmployee.CurrentRow.Cells[0].Value.ToString();
             FirstNameBox.Text = dataEmployee.CurrentRow.Cells[1].Value.ToString();
             LastNameBox.Text = dataEmployee.CurrentRow.Cells[2].Value.ToString();
-            GenderComboBox.SelectedItem = dataEmployee.CurrentRow.Cells[3].Value.ToString();
+            GenderComboBox.SelectedValue = dataEmployee.CurrentRow.Cells[3].Value.ToString();
+            
             EmailBox.Text = dataEmployee.CurrentRow.Cells[4].Value.ToString();
             PasswordBox.Text = dataEmployee.CurrentRow.Cells[5].Value.ToString();
             AddressBox.Text =  dataEmployee.CurrentRow.Cells[6].Value.ToString();
             PhoneBox.Text = dataEmployee.CurrentRow.Cells[7].Value.ToString();
-            DepartmentComboBox.SelectedItem = dataEmployee.CurrentRow.Cells[8].Value.ToString();
+            DepartmentComboBox.SelectedValue = dataEmployee.CurrentRow.Cells[8].Value.ToString();
 
         }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HelpPage));
             this.buttonGoBack = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonAddEmployee = new System.Windows.Forms.Button();
@@ -111,6 +112,7 @@
             this.PasswordBox.PasswordChar = '*';
             this.PasswordBox.Size = new System.Drawing.Size(129, 34);
             this.PasswordBox.TabIndex = 49;
+            this.PasswordBox.TextChanged += new System.EventHandler(this.PasswordBox_TextChanged);
             // 
             // pictureBox2
             // 
@@ -142,6 +144,7 @@
             this.IDBox.Name = "IDBox";
             this.IDBox.Size = new System.Drawing.Size(129, 34);
             this.IDBox.TabIndex = 46;
+            this.IDBox.TextChanged += new System.EventHandler(this.IDBox_TextChanged);
             // 
             // pictureBox1
             // 
@@ -170,11 +173,11 @@
             // 
             this.labelError.AutoSize = true;
             this.labelError.BackColor = System.Drawing.Color.Transparent;
-            this.labelError.Font = new System.Drawing.Font("Google Sans", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelError.Font = new System.Drawing.Font("Google Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelError.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelError.Location = new System.Drawing.Point(317, 415);
+            this.labelError.Location = new System.Drawing.Point(317, 427);
             this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(0, 21);
+            this.labelError.Size = new System.Drawing.Size(0, 18);
             this.labelError.TabIndex = 52;
             // 
             // HelpPage
@@ -197,6 +200,7 @@
             this.Controls.Add(this.buttonGoBack);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "HelpPage";

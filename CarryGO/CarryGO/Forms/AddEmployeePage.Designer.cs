@@ -30,6 +30,7 @@ namespace CarryGO
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEmployeePage));
             this.GenderComboBox = new System.Windows.Forms.ComboBox();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carryGODBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -83,8 +84,8 @@ namespace CarryGO
             this.buttonSearchById = new System.Windows.Forms.PictureBox();
             this.genderTableAdapter1 = new CarryGO.CarryGODBDataSetTableAdapters.GenderTableAdapter();
             this.panelSearchID = new System.Windows.Forms.Panel();
-            this.buttonSearchById2 = new System.Windows.Forms.PictureBox();
             this.IDBox = new System.Windows.Forms.TextBox();
+            this.buttonSearchById2 = new System.Windows.Forms.PictureBox();
             this.errorLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carryGODBDataSetBindingSource)).BeginInit();
@@ -646,6 +647,14 @@ namespace CarryGO
             this.panelSearchID.TabIndex = 67;
             this.panelSearchID.Visible = false;
             // 
+            // IDBox
+            // 
+            this.IDBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.IDBox.Location = new System.Drawing.Point(3, 43);
+            this.IDBox.Name = "IDBox";
+            this.IDBox.Size = new System.Drawing.Size(124, 34);
+            this.IDBox.TabIndex = 68;
+            // 
             // buttonSearchById2
             // 
             this.buttonSearchById2.BackColor = System.Drawing.Color.Transparent;
@@ -657,14 +666,6 @@ namespace CarryGO
             this.buttonSearchById2.TabIndex = 68;
             this.buttonSearchById2.TabStop = false;
             this.buttonSearchById2.Click += new System.EventHandler(this.buttonSearchById2_Click);
-            // 
-            // IDBox
-            // 
-            this.IDBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.IDBox.Location = new System.Drawing.Point(3, 43);
-            this.IDBox.Name = "IDBox";
-            this.IDBox.Size = new System.Drawing.Size(124, 34);
-            this.IDBox.TabIndex = 68;
             // 
             // errorLabel
             // 
@@ -722,6 +723,7 @@ namespace CarryGO
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AddEmployeePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

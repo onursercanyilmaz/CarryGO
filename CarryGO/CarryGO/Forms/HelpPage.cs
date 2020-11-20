@@ -47,6 +47,10 @@ namespace CarryGO
                     addEmployeePage.Show();
                     sqlcon.Close();
                 }
+                else if (IDBox.Text =="" && PasswordBox.Text=="")
+                {
+                    labelError.Text = "WRONG ADMIN ID/PASSWORD!";
+                }
             }
             catch (Exception)
             {
@@ -56,6 +60,16 @@ namespace CarryGO
             
             
             
+        }
+
+        private void IDBox_TextChanged(object sender, EventArgs e)
+        {
+            labelError.Text = "";
+        }
+
+        private void PasswordBox_TextChanged(object sender, EventArgs e)
+        {
+            labelError.Text = "";
         }
     }
 }

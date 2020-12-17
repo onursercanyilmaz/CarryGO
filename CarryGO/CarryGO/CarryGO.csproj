@@ -61,6 +61,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarryGODBDataSet.cs">
+      <DependentUpon>CarryGODBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CarryGODBDataSet.Designer.cs">
       <DependentUpon>CarryGODBDataSet.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -98,6 +101,47 @@
     <Compile Include="Classes\TransparentTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="userControls\ucAnnounce.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControls\ucAnnounce.Designer.cs">
+      <DependentUpon>ucAnnounce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControls\ucAbout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControls\ucAbout.Designer.cs">
+      <DependentUpon>ucAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControls\ucDelivered.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControls\ucDelivered.Designer.cs">
+      <DependentUpon>ucDelivered.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControls\ucEnquiry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControls\ucEnquiry.Designer.cs">
+      <DependentUpon>ucEnquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControls\ucInTransaction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControls\ucInTransaction.Designer.cs">
+      <DependentUpon>ucInTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControls\ucNewCargo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControls\ucNewCargo.Designer.cs">
+      <DependentUpon>ucNewCargo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\AddEmployeePage.resx">
       <DependentUpon>AddEmployeePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,14 +156,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="userControls\ucAnnounce.resx">
+      <DependentUpon>ucAnnounce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControls\ucNewCargo.resx">
+      <DependentUpon>ucNewCargo.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="CarryGODBDataSet.xsc">
       <DependentUpon>CarryGODBDataSet.xsd</DependentUpon>
@@ -185,6 +230,32 @@
       <DependentUpon>CarryGODB.mdf</DependentUpon>
     </Content>
     <Content Include="Items\welcometoCarryGo.mp3" />
+    <Content Include="Resources\111.png" />
+    <Content Include="Resources\11.png" />
+    <Content Include="Resources\13.png" />
+    <Content Include="Resources\9.png" />
+    <None Include="Resources\whereStick.png" />
+    <None Include="Resources\MainPageBorder.png" />
+    <None Include="Resources\enquiry1.png" />
+    <None Include="Resources\delivered1.png" />
+    <None Include="Resources\announcements.png" />
+    <Content Include="Resources\enquiry.png" />
+    <None Include="Resources\intransaction1.png" />
+    <None Include="Resources\newcargo3.png" />
+    <None Include="Resources\newcargo2.png" />
+    <None Include="Resources\newcargo1.png" />
+    <None Include="Resources\newcargo.png" />
+    <None Include="Resources\delivered.png" />
+    <None Include="Resources\intransaction.png" />
+    <None Include="Resources\WELCOME3.png" />
+    <None Include="Resources\WELCOME2.png" />
+    <None Include="Resources\icons8-transaction-list-40.png" />
+    <None Include="Resources\icons8-transaction-list-24.png" />
+    <None Include="Resources\icons8-transaction-list-64.png" />
+    <None Include="Resources\Screenshot_2020-12-09 WELCOME.png" />
+    <None Include="Resources\WELCOME1.png" />
+    <None Include="Resources\WELCOME%282%29.png" />
+    <None Include="Resources\WELCOME%281%29.png" />
     <None Include="Resources\Screenshot_2020-11-19 WELCOME%284%29.png" />
     <None Include="Resources\Screenshot_2020-11-19 WELCOME%283%29.png" />
     <None Include="Resources\Screenshot_2020-11-19 WELCOME%281%29.png" />

@@ -98,7 +98,7 @@ namespace CarryGO
         private void buttonUpdateEmployee_Click(object sender, EventArgs e)
         {
             employee.Update(FirstNameBox, LastNameBox, EmailBox, PasswordBox, AddressBox, PhoneBox, GenderComboBox, DepartmentComboBox, errorLabel,IDBox);
-            employee.View(dataEmployee);
+           // employee.View(dataEmployee);
         }
     }
 }

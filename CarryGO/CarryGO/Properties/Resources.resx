@@ -118,29 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Screenshot_2020-11-19 WELCOME(2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Screenshot_2020-11-19 WELCOME(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addEmp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addEmp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="addEmployeeButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addEmployeeButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="WELCOME" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WELCOME.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Screenshot_2020-11-18 WELCOME(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Screenshot_2020-11-18 WELCOME(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="delivered" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delivered1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Screenshot_2020-11-18 WELCOME" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Screenshot_2020-11-18 WELCOME.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="textBoxBack1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\textBoxBack1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Screenshot_2020-11-19 WELCOME(3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Screenshot_2020-11-19 WELCOME(3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="addEmployeeButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addEmployeeButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="111" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\111.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="helpScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\helpScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,16 +139,94 @@
   <data name="AddEmployeePage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AddEmployeePage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loginScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loginScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-transaction-list-40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-transaction-list-40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Screenshot_2020-11-18 WELCOME(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot_2020-11-18 WELCOME(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="addEmp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addEmp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Screenshot_2020-12-09 WELCOME" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot_2020-12-09 WELCOME.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WELCOME1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WELCOME1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="newcargo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\newcargo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-transaction-list-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-transaction-list-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Screenshot_2020-11-19 WELCOME(4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot_2020-11-19 WELCOME(4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whereStick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\whereStick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WELCOME2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WELCOME2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="intransaction1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\intransaction1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WELCOME(2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WELCOME(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Screenshot_2020-11-19 WELCOME(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot_2020-11-19 WELCOME(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="newcargo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\newcargo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loginScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loginScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enquiry" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enquiry1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="textBoxBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\textBoxBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Screenshot_2020-11-19 WELCOME(4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Screenshot_2020-11-19 WELCOME(4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MainPageBorder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MainPageBorder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WELCOME(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WELCOME(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WELCOME3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WELCOME3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="newcargo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\newcargo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Screenshot_2020-11-19 WELCOME(3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot_2020-11-19 WELCOME(3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="textBoxBack1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\textBoxBack1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Screenshot_2020-11-18 WELCOME" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot_2020-11-18 WELCOME.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="newcargo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\newcargo3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="intransaction" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\intransaction.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-transaction-list-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-transaction-list-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Screenshot_2020-11-19 WELCOME(2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Screenshot_2020-11-19 WELCOME(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="announcements" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\announcements.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -9,7 +9,6 @@ C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\Car
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.Login.resources
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\bin\Debug\Interop.WMPLib.dll
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\bin\Debug\AxInterop.WMPLib.dll
-C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.csprojAssemblyReference.cache
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\Interop.WMPLib.dll
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.csproj.ResolveComReference.cache
@@ -18,3 +17,6 @@ C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\Car
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\bin\Debug\CarryGODB.mdf
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\bin\Debug\CarryGODB_log.ldf
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.MainPage.resources
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.userControls.ucNewCargo.resources
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.userControls.ucAnnounce.resources
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.csprojAssemblyReference.cache

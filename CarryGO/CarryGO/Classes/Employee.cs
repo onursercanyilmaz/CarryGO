@@ -23,10 +23,6 @@ namespace CarryGO.Classes
         int departmentID;
        
 
-        public Employee()
-        {
-
-        }
 
         public int Password { get => password; set => password = value; }
         public int DepartmentID { get => departmentID; set => departmentID = value; }
@@ -180,7 +176,7 @@ namespace CarryGO.Classes
             {
                 
                 sqlcon.Open();
-                string query = "SELECT * FROM Employee WHERE FirstName ='" + id.Text.Trim() + "' AND EmployeePassword='" + password.Text.Trim() + "'";
+                string query = "SELECT * FROM Employee WHERE EmployeeID ='" + id.Text.Trim() + "' AND EmployeePassword='" + password.Text.Trim() + "'";
                 SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
                 DataTable dtbl = new DataTable();
                 sda.Fill(dtbl);
@@ -191,7 +187,6 @@ namespace CarryGO.Classes
                     main.Show();
                     sqlcon.Close();
                     form.Hide();
-
                 }
     
             }

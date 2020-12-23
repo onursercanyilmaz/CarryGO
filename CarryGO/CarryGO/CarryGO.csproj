@@ -50,6 +50,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -159,8 +160,20 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="userControls\ucAbout.resx">
+      <DependentUpon>ucAbout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="userControls\ucAnnounce.resx">
       <DependentUpon>ucAnnounce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControls\ucDelivered.resx">
+      <DependentUpon>ucDelivered.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControls\ucEnquiry.resx">
+      <DependentUpon>ucEnquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControls\ucInTransaction.resx">
+      <DependentUpon>ucInTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userControls\ucNewCargo.resx">
       <DependentUpon>ucNewCargo.cs</DependentUpon>
@@ -234,6 +247,8 @@
     <Content Include="Resources\11.png" />
     <Content Include="Resources\13.png" />
     <Content Include="Resources\9.png" />
+    <None Include="Resources\Screenshot_2020-12-23 WELCOME%281%29.png" />
+    <None Include="Resources\Screenshot_2020-12-23 WELCOME.png" />
     <None Include="Resources\whereStick.png" />
     <None Include="Resources\MainPageBorder.png" />
     <None Include="Resources\enquiry1.png" />

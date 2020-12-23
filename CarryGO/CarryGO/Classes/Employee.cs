@@ -20,12 +20,12 @@ namespace CarryGO.Classes
 
         SqlConnection sqlcon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\CarryGODB.mdf;Integrated Security=True;Connect Timeout=30");
         int password;
-        int departmentID;
+        object departmentID;
        
 
 
         public int Password { get => password; set => password = value; }
-        public int DepartmentID { get => departmentID; set => departmentID = value; }
+        public object DepartmentID { get => departmentID; set => departmentID = value; }
 
 
         public override void View(DataGridView dgv) 
@@ -39,160 +39,168 @@ namespace CarryGO.Classes
             sqlcon.Close();
 
         }
-        public override void Add(TextBox one, TextBox two, TextBox three, TextBox four, TextBox five, TextBox six, ComboBox cone, ComboBox ctwo, Label error) 
+
+        
+        
+        public override void Add(string FirstName, string LastName, object Gender, string Email, int Password, string Address, long Phone, object DepartmentID) 
         {
             try
             {
                 string query = "INSERT INTO Employee(FirstName,LastName,EmployeeGender,EmployeeEmail,EmployeePassword,EmployeeAddress,EmployeePhone, DepartmentID) VALUES (@FirstName,@LastName,@EmployeeGender,@EmployeeEmail,@EmployeePassword,@EmployeeAddress,@EmployeePhone, @DepartmentID)";
                 
                 SqlCommand cmd = new SqlCommand(query,sqlcon);
-                cmd.Parameters.AddWithValue("@FirstName",one.Text.Trim().ToString());
-                cmd.Parameters.AddWithValue("@LastName",two.Text.Trim().ToString());
-                cmd.Parameters.AddWithValue("@EmployeeGender",cone.SelectedValue);
-                cmd.Parameters.AddWithValue("@EmployeeEmail",three.Text.Trim().ToString());
-                cmd.Parameters.AddWithValue("@EmployeePassword",Int32.Parse(four.Text.Trim().ToString()));
-                cmd.Parameters.AddWithValue("@EmployeeAddress",five.Text.Trim().ToString());
-                cmd.Parameters.AddWithValue("@EmployeePhone",Int32.Parse(six.Text.Trim().ToString()));
-                cmd.Parameters.AddWithValue("@DepartmentID",ctwo.SelectedValue);
+                cmd.Parameters.AddWithValue("@FirstName", FirstName);
+                cmd.Parameters.AddWithValue("@LastName",LastName);
+                cmd.Parameters.AddWithValue("@EmployeeGender",Gender);
+                cmd.Parameters.AddWithValue("@EmployeeEmail",Email);
+                cmd.Parameters.AddWithValue("@EmployeePassword",Password);
+                cmd.Parameters.AddWithValue("@EmployeeAddress",Address);
+                cmd.Parameters.AddWithValue("@EmployeePhone",Phone);
+                cmd.Parameters.AddWithValue("@DepartmentID",DepartmentID);
                 sqlcon.Open();
                 cmd.ExecuteNonQuery();
 
                 sqlcon.Close();
-                error.Text = "Employee successfully added";
+               
                 
                 
             }
-            catch (Exception )
+            catch (Exception ex)
             {
-                error.Text = "An error occured while adding a new employee";
+                throw new Exception("Adding Employee Error: " + ex.Message);
             }
-           
+            finally
+            {
+                sqlcon.Close();
+            }
+
 
         }
-        public override void Delete(DataGridView dgv, Label error,TextBox IDBox) 
+        public override void Delete(int ID) 
         {
             try
             {
                 string query = "DELETE FROM Employee WHERE EmployeeID = @EmployeeID";
                 SqlCommand cmd = new SqlCommand(query, sqlcon);
-                cmd.Parameters.AddWithValue("@EmployeeID", Int32.Parse(IDBox.Text.Trim().ToString()));
+                cmd.Parameters.AddWithValue("@EmployeeID", ID);
                 sqlcon.Open();
                 cmd.ExecuteNonQuery();
 
                 sqlcon.Close();
-
-
-
-
-                error.Text = "Employee successfully deleted";
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                error.Text = "An error occured while employee deleting";
+                throw new Exception("Deleting Employee Error: " + ex.Message);
+            }
+            finally
+            {
+                sqlcon.Close();
             }
             
             
         }
-        public override void Update(TextBox one, TextBox two, TextBox three, TextBox four, TextBox five, TextBox six, ComboBox cone, ComboBox ctwo, Label error, TextBox IDBox) 
+        public override void Update(int ID, string FirstName, string LastName, object Gender, string Email, int Password, string Address, long Phone, object DepartmentID) 
         {
             try
             {
+               
                 string query = "UPDATE Employee SET FirstName=@FirstName,LastName=@LastName,EmployeeGender=@EmployeeGender,EmployeeEmail=@EmployeeEmail,EmployeePassword=@EmployeePassword,EmployeeAddress=@EmployeeAddress,EmployeePhone=@EmployeePhone, DepartmentID=@DepartmentID WHERE EmployeeID=@EmployeeID";
 
                 SqlCommand cmd = new SqlCommand(query, sqlcon);
-                cmd.Parameters.AddWithValue("@EmployeeID", Int32.Parse(IDBox.Text.Trim().ToString()));
-                cmd.Parameters.AddWithValue("@FirstName", one.Text.Trim().ToString());
-                cmd.Parameters.AddWithValue("@LastName", two.Text.Trim().ToString());
-                cmd.Parameters.AddWithValue("@EmployeeGender", cone.SelectedValue);
-                cmd.Parameters.AddWithValue("@EmployeeEmail", three.Text.Trim().ToString());
-                cmd.Parameters.AddWithValue("@EmployeePassword", Int32.Parse(four.Text.Trim().ToString()));
-                cmd.Parameters.AddWithValue("@EmployeeAddress", five.Text.Trim().ToString());
-                cmd.Parameters.AddWithValue("@EmployeePhone", Int32.Parse(six.Text.Trim().ToString()));
-                cmd.Parameters.AddWithValue("@DepartmentID", ctwo.SelectedValue);
+                cmd.Parameters.AddWithValue("@EmployeeID", ID);
+                cmd.Parameters.AddWithValue("@FirstName", FirstName);
+                cmd.Parameters.AddWithValue("@LastName", LastName);
+                cmd.Parameters.AddWithValue("@EmployeeGender", Gender);
+                cmd.Parameters.AddWithValue("@EmployeeEmail", Email);
+                cmd.Parameters.AddWithValue("@EmployeePassword", Password);
+                cmd.Parameters.AddWithValue("@EmployeeAddress", Address);
+                cmd.Parameters.AddWithValue("@EmployeePhone", Phone);
+                cmd.Parameters.AddWithValue("@DepartmentID", DepartmentID);
                 sqlcon.Open();
                 cmd.ExecuteNonQuery();
 
                 sqlcon.Close();
-                error.Text = "Employee successfully updated";
+               
 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                error.Text = "An error occured while updating the employee";
+                throw new Exception("Updating Employee Error: " + ex.Message);
+               
             }
 
 
         }
-        public override void SearchByID(TextBox id, DataGridView dgv) 
+       
+        public override void SearchByID(DataGridView dgv, int ID) 
         {
-            int idno = Int32.Parse(id.Text);
+          
             try
             {
 
                 sqlcon.Open();
-                string query = "SELECT * FROM Employee WHERE EmployeeID ='" + idno + "'";
+                string query = "SELECT * FROM Employee WHERE EmployeeID ='" + ID + "'";
                 SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
                 DataTable dtbl = new DataTable();
                 sda.Fill(dtbl);
                 dgv.DataSource = dtbl;
                 sqlcon.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw new Exception("Finding Employee Error: " + ex.Message);
             }
-            
+            finally
+            {
+                sqlcon.Close();
+            }
+
 
 
         }
-        public override void SearchByName(TextBox name, DataGridView dgv)
+        public override void SearchByName(string FirstName, DataGridView dgv)
         {
             try
             {
 
                 sqlcon.Open();
-                string query = "SELECT * FROM Employee WHERE FirstName ='" + name.Text + "'";
+                string query = "SELECT * FROM Employee WHERE FirstName LIKE '" + FirstName + "%'";
                 SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
                 DataTable dtbl = new DataTable();
                 sda.Fill(dtbl);
                 dgv.DataSource = dtbl;
                 sqlcon.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                throw new Exception("Finding Employee Error: " + ex.Message);
+                
+            }
+            finally
+            {
+                sqlcon.Close();
             }
 
         }
        
-        public override void Login(TextBox id, TextBox password, Label error, Form form) 
+        public override void  Login(int ID, int Password) 
         {
            
             try
             {
                 
                 sqlcon.Open();
-                string query = "SELECT * FROM Employee WHERE EmployeeID ='" + id.Text.Trim() + "' AND EmployeePassword='" + password.Text.Trim() + "'";
+                string query = "SELECT * FROM Employee WHERE EmployeeID ='" + ID + "' AND EmployeePassword='" + Password + "'";
                 SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
                 DataTable dtbl = new DataTable();
                 sda.Fill(dtbl);
-                if (dtbl.Rows.Count == 1)
-                {
-                    error.Text = "";
-                    MainPage main = new MainPage();
-                    main.Show();
-                    sqlcon.Close();
-                    form.Hide();
-                }
-    
+               
             }
             catch (Exception)
             {
-                error.Text = "WRONG Employee ID/PASSWORD!";
+                throw;
             }
         }
         public override void Logout() 

@@ -12,6 +12,7 @@ namespace CarryGO.Classes
 {
     public  abstract class Person //Main Class for Employee and Customer
     {
+        int id;
         string firstName;
         string lastName;
         string gender;
@@ -25,6 +26,7 @@ namespace CarryGO.Classes
         }
 
         //From C# Docs : Get and Set
+        public int ID { get => id; set => id = value; }
         public string FirstName { get => firstName; set => firstName = value; }
         public string LastName { get => lastName; set => lastName = value; }
         public string Gender { get => gender; set => gender = value; }
@@ -33,13 +35,13 @@ namespace CarryGO.Classes
         public long Phone { get => phone; set => phone = value; }
 
         public virtual void View(DataGridView dgv) { }
-        public virtual void Add(TextBox one, TextBox two, TextBox three, TextBox four, TextBox five, TextBox six, ComboBox cone, ComboBox ctwo, Label error) { }
+        public virtual void Add(string FirstName, string LastName, object Gender, string Email, int Password, string Address, long Phone, object DepartmentID) { }
         public virtual void Save() { }
-        public virtual void Delete(DataGridView dgv, Label error, TextBox IDBox) { }
-        public virtual void Update(TextBox one, TextBox two, TextBox three, TextBox four, TextBox five, TextBox six, ComboBox cone, ComboBox ctwo, Label error, TextBox IDBox) { }
-        public virtual void SearchByID(TextBox id, DataGridView dgv) { }
-        public virtual void SearchByName(TextBox name, DataGridView dgv) { }
-        public virtual void Login(TextBox id, TextBox password, Label error, Form form) { }
+        public virtual void Delete(int ID) { }
+        public virtual void Update(int ID, string FirstName, string LastName, object Gender, string Email, int Password, string Address, long Phone, object DepartmentID) { }
+        public virtual void SearchByID(DataGridView dgv, int ID) { }
+        public virtual void SearchByName(string FirstName, DataGridView dgv) { }
+        public virtual void Login(int ID, int Password) { }
         public virtual void Logout() { }
 
 

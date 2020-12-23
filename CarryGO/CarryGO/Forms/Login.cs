@@ -45,8 +45,21 @@ namespace CarryGO
 
         private void buttonEnter_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int id = int.Parse(idBox.Text.Trim().ToString());
+                int password = int.Parse(passwordBox.Text.Trim().ToString());
+                employee.Login(id, password);
+                MainPage main = new MainPage();
+                this.Hide();
+                main.ShowDialog();
+            }
+            catch (Exception)
+            {
 
-            employee.Login(idBox, passwordBox, errorLabel, this);
+                errorLabel.Text  = "Please check you ID or Password!";
+            }
+           
 
         }
 

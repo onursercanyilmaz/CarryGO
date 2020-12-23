@@ -20,12 +20,54 @@ namespace CarryGO
 
         }
 
-        
+        private bool ValidateEmail(string email)
+        {
+            try
+            {
+                var emailAddress = new System.Net.Mail.MailAddress(email);
+                return emailAddress.Address == email;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
         private void buttonAddEmployee_Click(object sender, EventArgs e)
         {
             //Add new employe to Employee table
-            employee.Add(FirstNameBox, LastNameBox, EmailBox, PasswordBox, AddressBox, PhoneBox, GenderComboBox, DepartmentComboBox, errorLabel);
+            try
+            {
+                errorLabel.Text = " ";
+                string name = FirstNameBox.Text.Trim();
+                string lastname = LastNameBox.Text.Trim();
+                object gender = GenderComboBox.SelectedValue;
+                string email = EmailBox.Text.Trim();
+                int password = int.Parse(PasswordBox.Text.Trim().ToString());
+                string address = AddressBox.Text.Trim();
+                long phone = long.Parse(PhoneBox.Text.Trim().ToString());
+                object departmentID = DepartmentComboBox.SelectedValue;
+               
+
+                if (!ValidateEmail(email))
+                {
+                    errorLabel.Text = "Please enter correct e-mail!";
+                    EmailBox.Focus();
+                    errorLabel.ForeColor = Color.Red;
+                    return;
+                }
+
+                employee.Add(name, lastname, gender, email, password, address, phone, departmentID);
+                errorLabel.Text = "Employee successfully added";
+                errorLabel.ForeColor = Color.Green;
+            }
+            catch (Exception ex)
+            {
+                errorLabel.Text = " ";
+                //errorLabel.Text = "An error occured while adding a new employee";
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void AddEmployeePage_Load(object sender, EventArgs e)
@@ -78,26 +120,97 @@ namespace CarryGO
         private void buttonSearchById2_Click(object sender, EventArgs e)
         {
             //search by id 
-            employee.SearchByID(IDBox, dataEmployee);
-            panelSearchID.Visible = false;
+
+            try
+            {
+                errorLabel.Text = " ";
+                int id = int.Parse(dataEmployee.CurrentRow.Cells[0].Value.ToString());
+               employee.SearchByID(dataEmployee,id);
+               panelSearchID.Visible = false;
+               errorLabel.Text = "Employee successfully found by ID!";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void buttonSearchByName_Click(object sender, EventArgs e)
         {
-            employee.SearchByName(FirstNameBox, dataEmployee);
+
+            try
+            {
+                errorLabel.Text = " ";
+                string name = FirstNameBox.Text.Trim();
+                employee.SearchByName(name, dataEmployee);
+                errorLabel.Text = "Employee successfully found by Name!";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                errorLabel.Text = " ";
+            }
+          
         }
 
         private void buttonDeleteEmployee_Click(object sender, EventArgs e)
         {
-            
-            employee.Delete(dataEmployee, errorLabel, IDBox);
-            employee.View(dataEmployee);
+
+            try
+            {
+                errorLabel.Text = " ";
+                int id = int.Parse(dataEmployee.CurrentRow.Cells[0].Value.ToString());
+                employee.Delete(id);
+                employee.View(dataEmployee);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                errorLabel.Text = " ";
+            }
+        
             
         }
 
         private void buttonUpdateEmployee_Click(object sender, EventArgs e)
         {
-            employee.Update(FirstNameBox, LastNameBox, EmailBox, PasswordBox, AddressBox, PhoneBox, GenderComboBox, DepartmentComboBox, errorLabel,IDBox);
+            try
+            { 
+            int id = int.Parse(IDBox.Text.ToString());
+            string name = FirstNameBox.Text.Trim();
+            string lastname = LastNameBox.Text.Trim();
+            object gender = GenderComboBox.SelectedValue;
+            string email = EmailBox.Text.Trim();
+            int password = int.Parse(PasswordBox.Text.Trim().ToString());
+            string address = AddressBox.Text.Trim();
+            long phone = long.Parse(PhoneBox.Text.Trim().ToString());
+            object departmentID = DepartmentComboBox.SelectedValue;
+
+
+            if (!ValidateEmail(email))
+            {
+                errorLabel.Text = "Please enter correct e-mail!";
+                EmailBox.Focus();
+                errorLabel.ForeColor = Color.Red;
+                return;
+            }
+
+            employee.Update(id,name, lastname, gender, email, password, address, phone, departmentID);
+            errorLabel.Text = "Employee successfully updated";
+            errorLabel.ForeColor = Color.Green;
+        }
+            catch (Exception ex)
+            {
+
+                //errorLabel.Text = "An error occured while adding a new employee";
+                MessageBox.Show(ex.Message);
+                errorLabel.Text = " ";
+            }
+    
            // employee.View(dataEmployee);
         }
     }

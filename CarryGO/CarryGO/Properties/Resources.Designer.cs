@@ -343,6 +343,26 @@ namespace CarryGO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2020_12_23_WELCOME {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_2020-12-23 WELCOME", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2020_12_23_WELCOME_1_ {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot_2020-12-23 WELCOME(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap textBoxBack {
             get {
                 object obj = ResourceManager.GetObject("textBoxBack", resourceCulture);

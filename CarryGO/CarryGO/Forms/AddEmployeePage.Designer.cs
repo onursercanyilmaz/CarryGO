@@ -673,7 +673,7 @@ namespace CarryGO
             this.errorLabel.BackColor = System.Drawing.Color.Transparent;
             this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.errorLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.errorLabel.Location = new System.Drawing.Point(365, 11);
+            this.errorLabel.Location = new System.Drawing.Point(59, 48);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(0, 25);
             this.errorLabel.TabIndex = 68;

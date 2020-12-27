@@ -34,7 +34,7 @@ namespace CarryGO
             this.GenderComboBox = new System.Windows.Forms.ComboBox();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carryGODBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.carryGODBDataSet = new CarryGO.CarryGODBDataSet();
+            this.carryGODBDataSet = new CarryGO.CarryGODBDataSet2();
             this.genderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.PasswordBox = new System.Windows.Forms.TextBox();
@@ -87,6 +87,13 @@ namespace CarryGO
             this.IDBox = new System.Windows.Forms.TextBox();
             this.buttonSearchById2 = new System.Windows.Forms.PictureBox();
             this.errorLabel = new System.Windows.Forms.Label();
+            this.departmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentTableAdapter1 = new CarryGO.CarryGODBDataSet2TableAdapters.DepartmentTableAdapter();
+            this.employeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.employeeTableAdapter1 = new CarryGO.CarryGODBDataSet2TableAdapters.EmployeeTableAdapter();
+            this.genderBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.genderTableAdapter2 = new CarryGO.CarryGODBDataSet2TableAdapters.GenderTableAdapter();
+            this.employeeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carryGODBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carryGODBDataSet)).BeginInit();
@@ -109,18 +116,23 @@ namespace CarryGO
             ((System.ComponentModel.ISupportInitialize)(this.buttonSearchById)).BeginInit();
             this.panelSearchID.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonSearchById2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // GenderComboBox
             // 
-            this.GenderComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.employeeBindingSource, "EmployeeGender", true));
-            this.GenderComboBox.DataSource = this.genderBindingSource;
+            this.GenderComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.employeeBindingSource2, "EmployeeGender", true));
+            this.GenderComboBox.DataSource = this.genderBindingSource1;
             this.GenderComboBox.DisplayMember = "GenderName";
             this.GenderComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.GenderComboBox.FormattingEnabled = true;
             this.GenderComboBox.Location = new System.Drawing.Point(136, 178);
+            this.GenderComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.GenderComboBox.Name = "GenderComboBox";
-            this.GenderComboBox.Size = new System.Drawing.Size(251, 33);
+            this.GenderComboBox.Size = new System.Drawing.Size(252, 33);
             this.GenderComboBox.TabIndex = 49;
             this.GenderComboBox.ValueMember = "GenderID";
             // 
@@ -151,6 +163,7 @@ namespace CarryGO
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
             this.label5.Location = new System.Drawing.Point(476, 136);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(0, 20);
             this.label5.TabIndex = 48;
@@ -159,8 +172,9 @@ namespace CarryGO
             // 
             this.PasswordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.PasswordBox.Location = new System.Drawing.Point(574, 129);
+            this.PasswordBox.Margin = new System.Windows.Forms.Padding(2);
             this.PasswordBox.Name = "PasswordBox";
-            this.PasswordBox.Size = new System.Drawing.Size(251, 34);
+            this.PasswordBox.Size = new System.Drawing.Size(252, 34);
             this.PasswordBox.TabIndex = 47;
             // 
             // pictureBox5
@@ -169,6 +183,7 @@ namespace CarryGO
             this.pictureBox5.BackgroundImage = global::CarryGO.Properties.Resources.textBoxBack;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox5.Location = new System.Drawing.Point(469, 128);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(356, 34);
             this.pictureBox5.TabIndex = 46;
@@ -181,6 +196,7 @@ namespace CarryGO
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
             this.label6.Location = new System.Drawing.Point(476, 85);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 20);
             this.label6.TabIndex = 45;
@@ -190,8 +206,9 @@ namespace CarryGO
             // 
             this.EmailBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.EmailBox.Location = new System.Drawing.Point(574, 78);
+            this.EmailBox.Margin = new System.Windows.Forms.Padding(2);
             this.EmailBox.Name = "EmailBox";
-            this.EmailBox.Size = new System.Drawing.Size(251, 34);
+            this.EmailBox.Size = new System.Drawing.Size(252, 34);
             this.EmailBox.TabIndex = 44;
             // 
             // pictureBox6
@@ -199,7 +216,8 @@ namespace CarryGO
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.BackgroundImage = global::CarryGO.Properties.Resources.textBoxBack;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Location = new System.Drawing.Point(469, 77);
+            this.pictureBox6.Location = new System.Drawing.Point(469, 78);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(356, 34);
             this.pictureBox6.TabIndex = 43;
@@ -212,6 +230,7 @@ namespace CarryGO
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
             this.label3.Location = new System.Drawing.Point(38, 236);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 20);
             this.label3.TabIndex = 42;
@@ -221,8 +240,9 @@ namespace CarryGO
             // 
             this.PhoneBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.PhoneBox.Location = new System.Drawing.Point(136, 229);
+            this.PhoneBox.Margin = new System.Windows.Forms.Padding(2);
             this.PhoneBox.Name = "PhoneBox";
-            this.PhoneBox.Size = new System.Drawing.Size(251, 34);
+            this.PhoneBox.Size = new System.Drawing.Size(252, 34);
             this.PhoneBox.TabIndex = 41;
             // 
             // pictureBox3
@@ -231,6 +251,7 @@ namespace CarryGO
             this.pictureBox3.BackgroundImage = global::CarryGO.Properties.Resources.textBoxBack;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(31, 228);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(356, 34);
             this.pictureBox3.TabIndex = 40;
@@ -243,6 +264,7 @@ namespace CarryGO
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
             this.label4.Location = new System.Drawing.Point(38, 185);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 20);
             this.label4.TabIndex = 39;
@@ -253,7 +275,8 @@ namespace CarryGO
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.BackgroundImage = global::CarryGO.Properties.Resources.textBoxBack;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(31, 177);
+            this.pictureBox4.Location = new System.Drawing.Point(31, 178);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(356, 34);
             this.pictureBox4.TabIndex = 38;
@@ -266,6 +289,7 @@ namespace CarryGO
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
             this.label2.Location = new System.Drawing.Point(38, 135);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 20);
             this.label2.TabIndex = 37;
@@ -275,8 +299,9 @@ namespace CarryGO
             // 
             this.LastNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.LastNameBox.Location = new System.Drawing.Point(136, 128);
+            this.LastNameBox.Margin = new System.Windows.Forms.Padding(2);
             this.LastNameBox.Name = "LastNameBox";
-            this.LastNameBox.Size = new System.Drawing.Size(251, 34);
+            this.LastNameBox.Size = new System.Drawing.Size(252, 34);
             this.LastNameBox.TabIndex = 36;
             // 
             // pictureBox2
@@ -284,7 +309,8 @@ namespace CarryGO
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = global::CarryGO.Properties.Resources.textBoxBack;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(31, 127);
+            this.pictureBox2.Location = new System.Drawing.Point(31, 128);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(356, 34);
             this.pictureBox2.TabIndex = 35;
@@ -297,6 +323,7 @@ namespace CarryGO
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(38, 84);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 20);
             this.label1.TabIndex = 34;
@@ -305,9 +332,10 @@ namespace CarryGO
             // FirstNameBox
             // 
             this.FirstNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.FirstNameBox.Location = new System.Drawing.Point(136, 77);
+            this.FirstNameBox.Location = new System.Drawing.Point(136, 78);
+            this.FirstNameBox.Margin = new System.Windows.Forms.Padding(2);
             this.FirstNameBox.Name = "FirstNameBox";
-            this.FirstNameBox.Size = new System.Drawing.Size(251, 34);
+            this.FirstNameBox.Size = new System.Drawing.Size(252, 34);
             this.FirstNameBox.TabIndex = 33;
             // 
             // pictureBox1
@@ -316,6 +344,7 @@ namespace CarryGO
             this.pictureBox1.BackgroundImage = global::CarryGO.Properties.Resources.textBoxBack;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(31, 76);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(356, 34);
             this.pictureBox1.TabIndex = 32;
@@ -328,6 +357,7 @@ namespace CarryGO
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.ForeColor = System.Drawing.SystemColors.Control;
             this.label7.Location = new System.Drawing.Point(476, 236);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(119, 20);
             this.label7.TabIndex = 55;
@@ -339,6 +369,7 @@ namespace CarryGO
             this.pictureBox8.BackgroundImage = global::CarryGO.Properties.Resources.textBoxBack;
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox8.Location = new System.Drawing.Point(469, 228);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(356, 34);
             this.pictureBox8.TabIndex = 53;
@@ -351,6 +382,7 @@ namespace CarryGO
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label8.ForeColor = System.Drawing.SystemColors.Control;
             this.label8.Location = new System.Drawing.Point(476, 185);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 20);
             this.label8.TabIndex = 52;
@@ -360,9 +392,10 @@ namespace CarryGO
             // 
             this.AddressBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.AddressBox.Location = new System.Drawing.Point(574, 178);
+            this.AddressBox.Margin = new System.Windows.Forms.Padding(2);
             this.AddressBox.Multiline = true;
             this.AddressBox.Name = "AddressBox";
-            this.AddressBox.Size = new System.Drawing.Size(251, 33);
+            this.AddressBox.Size = new System.Drawing.Size(252, 33);
             this.AddressBox.TabIndex = 51;
             // 
             // pictureBox9
@@ -370,7 +403,8 @@ namespace CarryGO
             this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox9.BackgroundImage = global::CarryGO.Properties.Resources.textBoxBack;
             this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox9.Location = new System.Drawing.Point(469, 177);
+            this.pictureBox9.Location = new System.Drawing.Point(469, 178);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(356, 34);
             this.pictureBox9.TabIndex = 50;
@@ -381,6 +415,7 @@ namespace CarryGO
             this.buttonAddEmployee.BackColor = System.Drawing.Color.Transparent;
             this.buttonAddEmployee.Image = global::CarryGO.Properties.Resources.addEmp;
             this.buttonAddEmployee.Location = new System.Drawing.Point(732, 296);
+            this.buttonAddEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddEmployee.Name = "buttonAddEmployee";
             this.buttonAddEmployee.Size = new System.Drawing.Size(52, 49);
             this.buttonAddEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -395,6 +430,7 @@ namespace CarryGO
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
             this.label9.Location = new System.Drawing.Point(476, 136);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(83, 20);
             this.label9.TabIndex = 57;
@@ -402,16 +438,18 @@ namespace CarryGO
             // 
             // DepartmentComboBox
             // 
-            this.DepartmentComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.employeeBindingSource, "DepartmentID", true));
-            this.DepartmentComboBox.DataSource = this.departmentBindingSource;
+            this.DepartmentComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.employeeBindingSource1, "DepartmentID", true));
+            this.DepartmentComboBox.DataSource = this.departmentBindingSource1;
             this.DepartmentComboBox.DisplayMember = "DepartmentName";
             this.DepartmentComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DepartmentComboBox.FormattingEnabled = true;
             this.DepartmentComboBox.Location = new System.Drawing.Point(574, 229);
+            this.DepartmentComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.DepartmentComboBox.Name = "DepartmentComboBox";
-            this.DepartmentComboBox.Size = new System.Drawing.Size(251, 33);
+            this.DepartmentComboBox.Size = new System.Drawing.Size(252, 33);
             this.DepartmentComboBox.TabIndex = 58;
             this.DepartmentComboBox.ValueMember = "DepartmentID";
+            this.DepartmentComboBox.SelectedIndexChanged += new System.EventHandler(this.DepartmentComboBox_SelectedIndexChanged);
             // 
             // departmentBindingSource
             // 
@@ -436,6 +474,7 @@ namespace CarryGO
             this.buttonGoBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonGoBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGoBack.Location = new System.Drawing.Point(-2, 0);
+            this.buttonGoBack.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGoBack.Name = "buttonGoBack";
             this.buttonGoBack.Size = new System.Drawing.Size(55, 52);
             this.buttonGoBack.TabIndex = 59;
@@ -452,6 +491,7 @@ namespace CarryGO
             this.buttonClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Location = new System.Drawing.Point(824, 0);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(55, 52);
             this.buttonClose.TabIndex = 60;
@@ -478,6 +518,7 @@ namespace CarryGO
             this.dataEmployee.DataSource = this.employeeBindingSource;
             this.dataEmployee.GridColor = System.Drawing.SystemColors.Control;
             this.dataEmployee.Location = new System.Drawing.Point(31, 296);
+            this.dataEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.dataEmployee.Name = "dataEmployee";
             this.dataEmployee.ReadOnly = true;
             this.dataEmployee.RowHeadersWidth = 51;
@@ -577,6 +618,7 @@ namespace CarryGO
             this.buttonUpdateEmployee.BackColor = System.Drawing.Color.Transparent;
             this.buttonUpdateEmployee.Image = global::CarryGO.Properties.Resources.Screenshot_2020_11_18_WELCOME;
             this.buttonUpdateEmployee.Location = new System.Drawing.Point(732, 365);
+            this.buttonUpdateEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.buttonUpdateEmployee.Name = "buttonUpdateEmployee";
             this.buttonUpdateEmployee.Size = new System.Drawing.Size(52, 49);
             this.buttonUpdateEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -589,6 +631,7 @@ namespace CarryGO
             this.buttonDeleteEmployee.BackColor = System.Drawing.Color.Transparent;
             this.buttonDeleteEmployee.Image = global::CarryGO.Properties.Resources.Screenshot_2020_11_18_WELCOME_1_;
             this.buttonDeleteEmployee.Location = new System.Drawing.Point(732, 429);
+            this.buttonDeleteEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDeleteEmployee.Name = "buttonDeleteEmployee";
             this.buttonDeleteEmployee.Size = new System.Drawing.Size(52, 49);
             this.buttonDeleteEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -600,7 +643,8 @@ namespace CarryGO
             // 
             this.buttonSearchByName.BackColor = System.Drawing.Color.Transparent;
             this.buttonSearchByName.Image = global::CarryGO.Properties.Resources.Screenshot_2020_11_19_WELCOME_4_;
-            this.buttonSearchByName.Location = new System.Drawing.Point(807, 429);
+            this.buttonSearchByName.Location = new System.Drawing.Point(808, 429);
+            this.buttonSearchByName.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearchByName.Name = "buttonSearchByName";
             this.buttonSearchByName.Size = new System.Drawing.Size(52, 49);
             this.buttonSearchByName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -612,7 +656,8 @@ namespace CarryGO
             // 
             this.buttonViewEmployee.BackColor = System.Drawing.Color.Transparent;
             this.buttonViewEmployee.Image = global::CarryGO.Properties.Resources.Screenshot_2020_11_19_WELCOME_2_;
-            this.buttonViewEmployee.Location = new System.Drawing.Point(807, 296);
+            this.buttonViewEmployee.Location = new System.Drawing.Point(808, 296);
+            this.buttonViewEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.buttonViewEmployee.Name = "buttonViewEmployee";
             this.buttonViewEmployee.Size = new System.Drawing.Size(52, 49);
             this.buttonViewEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -624,7 +669,8 @@ namespace CarryGO
             // 
             this.buttonSearchById.BackColor = System.Drawing.Color.Transparent;
             this.buttonSearchById.Image = global::CarryGO.Properties.Resources.Screenshot_2020_11_19_WELCOME_3_;
-            this.buttonSearchById.Location = new System.Drawing.Point(807, 365);
+            this.buttonSearchById.Location = new System.Drawing.Point(808, 365);
+            this.buttonSearchById.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearchById.Name = "buttonSearchById";
             this.buttonSearchById.Size = new System.Drawing.Size(52, 49);
             this.buttonSearchById.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -642,6 +688,7 @@ namespace CarryGO
             this.panelSearchID.Controls.Add(this.IDBox);
             this.panelSearchID.Controls.Add(this.buttonSearchById2);
             this.panelSearchID.Location = new System.Drawing.Point(596, 296);
+            this.panelSearchID.Margin = new System.Windows.Forms.Padding(2);
             this.panelSearchID.Name = "panelSearchID";
             this.panelSearchID.Size = new System.Drawing.Size(130, 182);
             this.panelSearchID.TabIndex = 67;
@@ -650,7 +697,8 @@ namespace CarryGO
             // IDBox
             // 
             this.IDBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.IDBox.Location = new System.Drawing.Point(3, 43);
+            this.IDBox.Location = new System.Drawing.Point(2, 42);
+            this.IDBox.Margin = new System.Windows.Forms.Padding(2);
             this.IDBox.Name = "IDBox";
             this.IDBox.Size = new System.Drawing.Size(124, 34);
             this.IDBox.TabIndex = 68;
@@ -660,6 +708,7 @@ namespace CarryGO
             this.buttonSearchById2.BackColor = System.Drawing.Color.Transparent;
             this.buttonSearchById2.Image = global::CarryGO.Properties.Resources.Screenshot_2020_11_19_WELCOME_3_;
             this.buttonSearchById2.Location = new System.Drawing.Point(39, 121);
+            this.buttonSearchById2.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearchById2.Name = "buttonSearchById2";
             this.buttonSearchById2.Size = new System.Drawing.Size(52, 49);
             this.buttonSearchById2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -673,10 +722,43 @@ namespace CarryGO
             this.errorLabel.BackColor = System.Drawing.Color.Transparent;
             this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.errorLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.errorLabel.Location = new System.Drawing.Point(59, 48);
+            this.errorLabel.Location = new System.Drawing.Point(331, 12);
+            this.errorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(0, 25);
             this.errorLabel.TabIndex = 68;
+            // 
+            // departmentBindingSource1
+            // 
+            this.departmentBindingSource1.DataMember = "Department";
+            this.departmentBindingSource1.DataSource = this.carryGODBDataSet;
+            // 
+            // departmentTableAdapter1
+            // 
+            this.departmentTableAdapter1.ClearBeforeFill = true;
+            // 
+            // employeeBindingSource1
+            // 
+            this.employeeBindingSource1.DataMember = "Employee";
+            this.employeeBindingSource1.DataSource = this.carryGODBDataSet;
+            // 
+            // employeeTableAdapter1
+            // 
+            this.employeeTableAdapter1.ClearBeforeFill = true;
+            // 
+            // genderBindingSource1
+            // 
+            this.genderBindingSource1.DataMember = "Gender";
+            this.genderBindingSource1.DataSource = this.carryGODBDataSet;
+            // 
+            // genderTableAdapter2
+            // 
+            this.genderTableAdapter2.ClearBeforeFill = true;
+            // 
+            // employeeBindingSource2
+            // 
+            this.employeeBindingSource2.DataMember = "Employee";
+            this.employeeBindingSource2.DataSource = this.carryGODBDataSet;
             // 
             // AddEmployeePage
             // 
@@ -724,6 +806,7 @@ namespace CarryGO
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "AddEmployeePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -752,6 +835,10 @@ namespace CarryGO
             this.panelSearchID.ResumeLayout(false);
             this.panelSearchID.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonSearchById2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -784,7 +871,7 @@ namespace CarryGO
         private System.Windows.Forms.PictureBox buttonAddEmployee;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox DepartmentComboBox;
-        private CarryGODBDataSet carryGODBDataSet;
+        private CarryGODBDataSet2 carryGODBDataSet;
         private System.Windows.Forms.BindingSource genderBindingSource;
         private CarryGODBDataSetTableAdapters.GenderTableAdapter genderTableAdapter;
         private System.Windows.Forms.BindingSource departmentBindingSource;
@@ -814,5 +901,12 @@ namespace CarryGO
         private System.Windows.Forms.TextBox IDBox;
         private System.Windows.Forms.PictureBox buttonSearchById2;
         private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.BindingSource departmentBindingSource1;
+        private CarryGODBDataSet2TableAdapters.DepartmentTableAdapter departmentTableAdapter1;
+        private System.Windows.Forms.BindingSource employeeBindingSource1;
+        private CarryGODBDataSet2TableAdapters.EmployeeTableAdapter employeeTableAdapter1;
+        private System.Windows.Forms.BindingSource genderBindingSource1;
+        private CarryGODBDataSet2TableAdapters.GenderTableAdapter genderTableAdapter2;
+        private System.Windows.Forms.BindingSource employeeBindingSource2;
     }
 }

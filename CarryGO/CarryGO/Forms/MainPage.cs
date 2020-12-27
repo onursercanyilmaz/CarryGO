@@ -174,5 +174,21 @@ namespace CarryGO
                 throw;
             }
         }
+
+       
+
+        private void MainPage_Load(object sender, EventArgs e)
+        {
+            //// TODO: This line of code loads data into the 'carryGODBDataSet.Billing' table. You can move, or remove it, as needed.
+            //this.billingTableAdapter.Fill(this.carryGODBDataSet.Billing);
+            //// TODO: This line of code loads data into the 'carryGODBDataSet.Payment' table. You can move, or remove it, as needed.
+            //this.paymentTableAdapter.Fill(this.carryGODBDataSet.Payment);
+
+        }
+
+        private void billingBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -19,4 +19,16 @@ C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\bin\Debug\Car
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.MainPage.resources
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.userControls.ucNewCargo.resources
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.userControls.ucAnnounce.resources
-C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.csprojAssemblyReference.cache
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.userControls.ucAbout.resources
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.userControls.ucDelivered.resources
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.userControls.ucEnquiry.resources
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.userControls.ucInTransaction.resources
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\bin\Debug\System.Security.AccessControl.dll
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\bin\Debug\System.Security.Permissions.dll
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\bin\Debug\System.Security.AccessControl.xml
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\bin\Debug\System.Security.Permissions.xml
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.csproj.CopyComplete

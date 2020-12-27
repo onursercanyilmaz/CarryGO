@@ -72,9 +72,15 @@ namespace CarryGO
 
         private void AddEmployeePage_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'carryGODBDataSet.Gender' table. You can move, or remove it, as needed.
+            this.genderTableAdapter2.Fill(this.carryGODBDataSet.Gender);
+            // TODO: This line of code loads data into the 'carryGODBDataSet.Employee' table. You can move, or remove it, as needed.
+            this.employeeTableAdapter1.Fill(this.carryGODBDataSet.Employee);
+            // TODO: This line of code loads data into the 'carryGODBDataSet.Department' table. You can move, or remove it, as needed.
+            this.departmentTableAdapter1.Fill(this.carryGODBDataSet.Department);
 
-            this.genderTableAdapter.Fill(this.carryGODBDataSet.Gender);
-            this.departmentTableAdapter.Fill(this.carryGODBDataSet.Department);
+
+          
         }
 
         private void buttonGoBack_Click(object sender, EventArgs e)
@@ -110,6 +116,7 @@ namespace CarryGO
         {
             //show the Employee table on the data grid view
             employee.View(dataEmployee);
+            errorLabel.Text = " ";
         }
 
         private void buttonSearchById_Click(object sender, EventArgs e)
@@ -151,7 +158,7 @@ namespace CarryGO
             {
 
                 MessageBox.Show(ex.Message);
-                errorLabel.Text = " ";
+              
             }
           
         }
@@ -165,12 +172,15 @@ namespace CarryGO
                 int id = int.Parse(dataEmployee.CurrentRow.Cells[0].Value.ToString());
                 employee.Delete(id);
                 employee.View(dataEmployee);
+
+                errorLabel.Text = "Employee Successfully Deleted!";
+                errorLabel.ForeColor = Color.LightGreen;
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
-                errorLabel.Text = " ";
+               
             }
         
             
@@ -208,10 +218,15 @@ namespace CarryGO
 
                 //errorLabel.Text = "An error occured while adding a new employee";
                 MessageBox.Show(ex.Message);
-                errorLabel.Text = " ";
+                
             }
     
            // employee.View(dataEmployee);
+        }
+
+        private void DepartmentComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

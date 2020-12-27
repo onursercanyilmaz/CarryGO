@@ -38,11 +38,13 @@
             this.btnAnnouncements = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelContent.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -50,6 +52,7 @@
             this.splitContainer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(50)))), ((int)(((byte)(72)))));
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -70,8 +73,8 @@
             this.splitContainer1.Panel2.BackgroundImage = global::CarryGO.Properties.Resources.MainPageBorder;
             this.splitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.splitContainer1.Panel2.Controls.Add(this.panelContent);
-            this.splitContainer1.Size = new System.Drawing.Size(1308, 862);
-            this.splitContainer1.SplitterDistance = 307;
+            this.splitContainer1.Size = new System.Drawing.Size(1308, 1055);
+            this.splitContainer1.SplitterDistance = 306;
             this.splitContainer1.TabIndex = 0;
             // 
             // btnAbout
@@ -92,7 +95,7 @@
             this.btnAbout.Margin = new System.Windows.Forms.Padding(0);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Padding = new System.Windows.Forms.Padding(35, 9, 9, 9);
-            this.btnAbout.Size = new System.Drawing.Size(307, 104);
+            this.btnAbout.Size = new System.Drawing.Size(306, 104);
             this.btnAbout.TabIndex = 6;
             this.btnAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAbout.UseVisualStyleBackColor = false;
@@ -116,7 +119,7 @@
             this.btnEnquiry.Margin = new System.Windows.Forms.Padding(0);
             this.btnEnquiry.Name = "btnEnquiry";
             this.btnEnquiry.Padding = new System.Windows.Forms.Padding(35, 9, 9, 9);
-            this.btnEnquiry.Size = new System.Drawing.Size(307, 104);
+            this.btnEnquiry.Size = new System.Drawing.Size(306, 104);
             this.btnEnquiry.TabIndex = 5;
             this.btnEnquiry.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEnquiry.UseVisualStyleBackColor = false;
@@ -140,7 +143,7 @@
             this.btnDelivered.Margin = new System.Windows.Forms.Padding(0);
             this.btnDelivered.Name = "btnDelivered";
             this.btnDelivered.Padding = new System.Windows.Forms.Padding(35, 9, 9, 9);
-            this.btnDelivered.Size = new System.Drawing.Size(307, 104);
+            this.btnDelivered.Size = new System.Drawing.Size(306, 104);
             this.btnDelivered.TabIndex = 4;
             this.btnDelivered.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDelivered.UseVisualStyleBackColor = false;
@@ -164,7 +167,7 @@
             this.btnInTransaction.Margin = new System.Windows.Forms.Padding(0);
             this.btnInTransaction.Name = "btnInTransaction";
             this.btnInTransaction.Padding = new System.Windows.Forms.Padding(35, 9, 9, 9);
-            this.btnInTransaction.Size = new System.Drawing.Size(307, 104);
+            this.btnInTransaction.Size = new System.Drawing.Size(306, 104);
             this.btnInTransaction.TabIndex = 3;
             this.btnInTransaction.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInTransaction.UseVisualStyleBackColor = false;
@@ -189,7 +192,7 @@
             this.btnNewCargo.Margin = new System.Windows.Forms.Padding(0);
             this.btnNewCargo.Name = "btnNewCargo";
             this.btnNewCargo.Padding = new System.Windows.Forms.Padding(35, 9, 9, 9);
-            this.btnNewCargo.Size = new System.Drawing.Size(307, 104);
+            this.btnNewCargo.Size = new System.Drawing.Size(306, 104);
             this.btnNewCargo.TabIndex = 2;
             this.btnNewCargo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNewCargo.UseVisualStyleBackColor = false;
@@ -214,7 +217,7 @@
             this.btnAnnouncements.Margin = new System.Windows.Forms.Padding(0);
             this.btnAnnouncements.Name = "btnAnnouncements";
             this.btnAnnouncements.Padding = new System.Windows.Forms.Padding(35, 9, 9, 9);
-            this.btnAnnouncements.Size = new System.Drawing.Size(307, 104);
+            this.btnAnnouncements.Size = new System.Drawing.Size(306, 104);
             this.btnAnnouncements.TabIndex = 7;
             this.btnAnnouncements.Text = "▶️";
             this.btnAnnouncements.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -231,38 +234,52 @@
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.pictureBox1.Size = new System.Drawing.Size(307, 247);
+            this.pictureBox1.Size = new System.Drawing.Size(306, 247);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // panelContent
             // 
+            this.panelContent.Controls.Add(this.panel1);
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 0);
+            this.panelContent.Margin = new System.Windows.Forms.Padding(2);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(997, 862);
+            this.panelContent.Size = new System.Drawing.Size(998, 1055);
             this.panelContent.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(998, 1055);
+            this.panel1.TabIndex = 0;
             // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1308, 862);
+            this.ClientSize = new System.Drawing.Size(1308, 1055);
             this.Controls.Add(this.splitContainer1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainPage";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainPage_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelContent.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -278,5 +295,6 @@
         private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.Button btnAnnouncements;
         private System.Windows.Forms.Panel panelContent;
+        private System.Windows.Forms.Panel panel1;
     }
 }

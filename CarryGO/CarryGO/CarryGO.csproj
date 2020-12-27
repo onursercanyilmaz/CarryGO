@@ -49,8 +49,27 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.5.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Messaging" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.5.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +79,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarryGODBDataSet.cs">
@@ -70,6 +90,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="CarryGODBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarryGODBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CarryGODBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CarryGODBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Cargo.cs" />
+    <Compile Include="Classes\databaseHelper.cs" />
     <Compile Include="Forms\AddEmployeePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +222,29 @@
     <None Include="CarryGODBDataSet.xss">
       <DependentUpon>CarryGODBDataSet.xsd</DependentUpon>
     </None>
+    <None Include="CarryGODBDataSet1.xsc">
+      <DependentUpon>CarryGODBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CarryGODBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CarryGODBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CarryGODBDataSet1.xss">
+      <DependentUpon>CarryGODBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CarryGODBDataSet2.xsc">
+      <DependentUpon>CarryGODBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="CarryGODBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CarryGODBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CarryGODBDataSet2.xss">
+      <DependentUpon>CarryGODBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -247,6 +302,11 @@
     <Content Include="Resources\11.png" />
     <Content Include="Resources\13.png" />
     <Content Include="Resources\9.png" />
+    <None Include="Resources\newcargo_uc.png" />
+    <None Include="Resources\postman.png" />
+    <None Include="Resources\print.png" />
+    <None Include="Resources\view.png" />
+    <None Include="Resources\update.png" />
     <None Include="Resources\Screenshot_2020-12-23 WELCOME%281%29.png" />
     <None Include="Resources\Screenshot_2020-12-23 WELCOME.png" />
     <None Include="Resources\whereStick.png" />
@@ -254,6 +314,9 @@
     <None Include="Resources\enquiry1.png" />
     <None Include="Resources\delivered1.png" />
     <None Include="Resources\announcements.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\bill.png" />
     <Content Include="Resources\enquiry.png" />
     <None Include="Resources\intransaction1.png" />
     <None Include="Resources\newcargo3.png" />

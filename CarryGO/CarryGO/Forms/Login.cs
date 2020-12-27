@@ -50,6 +50,7 @@ namespace CarryGO
                 int id = int.Parse(idBox.Text.Trim().ToString());
                 int password = int.Parse(passwordBox.Text.Trim().ToString());
                 employee.Login(id, password);
+                
                 MainPage main = new MainPage();
                 this.Hide();
                 main.ShowDialog();
@@ -71,6 +72,11 @@ namespace CarryGO
         private void passwordBox_TextChanged(object sender, EventArgs e)
         {
             errorLabel.Text = "";
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

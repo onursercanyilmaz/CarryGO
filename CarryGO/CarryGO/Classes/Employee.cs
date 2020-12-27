@@ -47,7 +47,7 @@ namespace CarryGO.Classes
             try
             {
                 string query = "INSERT INTO Employee(FirstName,LastName,EmployeeGender,EmployeeEmail,EmployeePassword,EmployeeAddress,EmployeePhone, DepartmentID) VALUES (@FirstName,@LastName,@EmployeeGender,@EmployeeEmail,@EmployeePassword,@EmployeeAddress,@EmployeePhone, @DepartmentID)";
-                
+                databaseHelper.ExecuteQuery(query);
                 SqlCommand cmd = new SqlCommand(query,sqlcon);
                 cmd.Parameters.AddWithValue("@FirstName", FirstName);
                 cmd.Parameters.AddWithValue("@LastName",LastName);
@@ -81,12 +81,18 @@ namespace CarryGO.Classes
             try
             {
                 string query = "DELETE FROM Employee WHERE EmployeeID = @EmployeeID";
-                SqlCommand cmd = new SqlCommand(query, sqlcon);
-                cmd.Parameters.AddWithValue("@EmployeeID", ID);
-                sqlcon.Open();
-                cmd.ExecuteNonQuery();
+                //SqlCommand cmd = new SqlCommand(query, sqlcon);
+                //cmd.Parameters.AddWithValue("@EmployeeID", ID);
+                //sqlcon.Open();
+                //cmd.ExecuteNonQuery();
 
-                sqlcon.Close();
+                //sqlcon.Close();
+
+                
+                SqlParameter[] parameters = new SqlParameter[1];
+                parameters[0] = new SqlParameter("EmployeeID", ID);
+
+                databaseHelper.ExecuteNonQuery(query, parameters);
             }
             catch (Exception ex)
             {

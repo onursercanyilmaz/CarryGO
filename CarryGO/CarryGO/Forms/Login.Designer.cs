@@ -53,6 +53,7 @@ namespace CarryGO
             this.buttonClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Location = new System.Drawing.Point(822, 2);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(55, 52);
             this.buttonClose.TabIndex = 0;
@@ -69,6 +70,7 @@ namespace CarryGO
             this.buttonEnter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEnter.Location = new System.Drawing.Point(544, 301);
+            this.buttonEnter.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEnter.Name = "buttonEnter";
             this.buttonEnter.Size = new System.Drawing.Size(90, 91);
             this.buttonEnter.TabIndex = 1;
@@ -85,6 +87,7 @@ namespace CarryGO
             this.buttonHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonHelp.Location = new System.Drawing.Point(674, 301);
+            this.buttonHelp.Margin = new System.Windows.Forms.Padding(2);
             this.buttonHelp.Name = "buttonHelp";
             this.buttonHelp.Size = new System.Drawing.Size(90, 91);
             this.buttonHelp.TabIndex = 2;
@@ -95,6 +98,7 @@ namespace CarryGO
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
             this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(94, 402);
+            this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(2);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
@@ -104,19 +108,23 @@ namespace CarryGO
             // 
             this.idBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.idBox.Location = new System.Drawing.Point(584, 162);
+            this.idBox.Margin = new System.Windows.Forms.Padding(2);
             this.idBox.Name = "idBox";
             this.idBox.Size = new System.Drawing.Size(219, 30);
             this.idBox.TabIndex = 6;
+            this.idBox.Text = "306";
             this.idBox.TextChanged += new System.EventHandler(this.idBox_TextChanged);
             // 
             // passwordBox
             // 
             this.passwordBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.passwordBox.Location = new System.Drawing.Point(584, 220);
+            this.passwordBox.Margin = new System.Windows.Forms.Padding(2);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.PasswordChar = '*';
             this.passwordBox.Size = new System.Drawing.Size(219, 30);
             this.passwordBox.TabIndex = 7;
+            this.passwordBox.Text = "123456789";
             this.passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
             // 
             // errorLabel
@@ -126,6 +134,7 @@ namespace CarryGO
             this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.errorLabel.ForeColor = System.Drawing.Color.Coral;
             this.errorLabel.Location = new System.Drawing.Point(509, 266);
+            this.errorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(0, 20);
             this.errorLabel.TabIndex = 8;
@@ -149,10 +158,12 @@ namespace CarryGO
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CarryGO";
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

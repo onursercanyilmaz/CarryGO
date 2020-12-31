@@ -139,12 +139,12 @@ namespace CarryGO
             }
         }
 
-        private void btnAbout_Click(object sender, EventArgs e)
+        private void btnCustomerDetails_Click(object sender, EventArgs e)
         {
             try
             {
                 updateBorders(((Button)sender).Name);
-                ucAbout uc = new ucAbout();
+                ucCustomer uc = new ucCustomer();
                 uc.Dock = DockStyle.Fill;
                 panelContent.Controls.Clear();
                 panelContent.Controls.Add(uc);
@@ -156,7 +156,12 @@ namespace CarryGO
             }
         }
 
-       
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
 
         private void btnAnnouncements_Click(object sender, EventArgs e)
         {

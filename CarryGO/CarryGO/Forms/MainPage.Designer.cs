@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnEnquiry = new System.Windows.Forms.Button();
             this.btnDelivered = new System.Windows.Forms.Button();
@@ -58,6 +59,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(50)))), ((int)(((byte)(72)))));
+            this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.btnAbout);
             this.splitContainer1.Panel1.Controls.Add(this.btnEnquiry);
             this.splitContainer1.Panel1.Controls.Add(this.btnDelivered);
@@ -77,10 +79,33 @@
             this.splitContainer1.SplitterDistance = 306;
             this.splitContainer1.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(50)))), ((int)(((byte)(72)))));
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Coral;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Cooper Black", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Coral;
+            this.button1.Location = new System.Drawing.Point(0, 871);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(35, 9, 9, 9);
+            this.button1.Size = new System.Drawing.Size(306, 104);
+            this.button1.TabIndex = 8;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // btnAbout
             // 
             this.btnAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(50)))), ((int)(((byte)(72)))));
-            this.btnAbout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAbout.BackgroundImage")));
+            this.btnAbout.BackgroundImage = global::CarryGO.Properties.Resources.WELCOME4;
             this.btnAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAbout.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAbout.FlatAppearance.BorderColor = System.Drawing.Color.Coral;
@@ -99,7 +124,7 @@
             this.btnAbout.TabIndex = 6;
             this.btnAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAbout.UseVisualStyleBackColor = false;
-            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            this.btnAbout.Click += new System.EventHandler(this.btnCustomerDetails_Click);
             // 
             // btnEnquiry
             // 
@@ -296,5 +321,6 @@
         private System.Windows.Forms.Button btnAnnouncements;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }

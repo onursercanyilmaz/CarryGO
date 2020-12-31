@@ -100,6 +100,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CarryGODBDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Bill.cs" />
     <Compile Include="Classes\Cargo.cs" />
     <Compile Include="Classes\databaseHelper.cs" />
     <Compile Include="Forms\AddEmployeePage.cs">
@@ -151,6 +152,12 @@
     <Compile Include="userControls\ucAbout.Designer.cs">
       <DependentUpon>ucAbout.cs</DependentUpon>
     </Compile>
+    <Compile Include="userControls\ucCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControls\ucCustomer.Designer.cs">
+      <DependentUpon>ucCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="userControls\ucDelivered.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -197,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="userControls\ucAnnounce.resx">
       <DependentUpon>ucAnnounce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControls\ucCustomer.resx">
+      <DependentUpon>ucCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userControls\ucDelivered.resx">
       <DependentUpon>ucDelivered.cs</DependentUpon>
@@ -302,6 +312,16 @@
     <Content Include="Resources\11.png" />
     <Content Include="Resources\13.png" />
     <Content Include="Resources\9.png" />
+    <None Include="Resources\searchbyName.png" />
+    <None Include="Resources\ViewCostumer.png" />
+    <None Include="Resources\Screenshot_2020-12-30 WELCOME%282%29.png" />
+    <None Include="Resources\Screenshot_2020-12-30 WELCOME.png" />
+    <None Include="Resources\WELCOME%281%291.png" />
+    <None Include="Resources\print1.png" />
+    <None Include="Resources\sendEmail1.png" />
+    <None Include="Resources\WELCOME4.png" />
+    <None Include="Resources\WELCOME%282%29.png" />
+    <None Include="Resources\sendEmail.png" />
     <None Include="Resources\newcargo_uc.png" />
     <None Include="Resources\postman.png" />
     <None Include="Resources\print.png" />
@@ -317,6 +337,11 @@
     <None Include="Resources\delete.png" />
     <None Include="Resources\add.png" />
     <None Include="Resources\bill.png" />
+    <None Include="Resources\announceBackground.png" />
+    <None Include="Resources\customer_details.png" />
+    <None Include="Resources\bill1.png" />
+    <None Include="Resources\announceBackground1.png" />
+    <None Include="Resources\addCustomer.png" />
     <Content Include="Resources\enquiry.png" />
     <None Include="Resources\intransaction1.png" />
     <None Include="Resources\newcargo3.png" />
@@ -332,7 +357,6 @@
     <None Include="Resources\icons8-transaction-list-64.png" />
     <None Include="Resources\Screenshot_2020-12-09 WELCOME.png" />
     <None Include="Resources\WELCOME1.png" />
-    <None Include="Resources\WELCOME%282%29.png" />
     <None Include="Resources\WELCOME%281%29.png" />
     <None Include="Resources\Screenshot_2020-11-19 WELCOME%284%29.png" />
     <None Include="Resources\Screenshot_2020-11-19 WELCOME%283%29.png" />

@@ -30,13 +30,23 @@ namespace CarryGO.Classes
 
         public override void View(DataGridView dgv) 
         {
-            sqlcon.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Employee",sqlcon);
-            DataTable dtb = new DataTable();
-            sda.Fill(dtb);
-            
-            dgv.DataSource = dtb;
-            sqlcon.Close();
+
+            try
+            {
+                sqlcon.Open();
+                SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Employee", sqlcon);
+                DataTable dtb = new DataTable();
+                sda.Fill(dtb);
+
+                dgv.DataSource = dtb;
+                sqlcon.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
 
         }
 

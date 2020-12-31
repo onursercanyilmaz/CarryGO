@@ -173,7 +173,7 @@ namespace CarryGO
                 employee.Delete(id);
                 employee.View(dataEmployee);
 
-                errorLabel.Text = "Employee Successfully Deleted!";
+                errorLabel.Text = "✔️ Employee Successfully Deleted!";
                 errorLabel.ForeColor = Color.LightGreen;
             }
             catch (Exception ex)
@@ -210,7 +210,7 @@ namespace CarryGO
             }
 
             employee.Update(id,name, lastname, gender, email, password, address, phone, departmentID);
-            errorLabel.Text = "Employee successfully updated";
+            errorLabel.Text = "✔️ Employee successfully updated";
             errorLabel.ForeColor = Color.Green;
         }
             catch (Exception ex)

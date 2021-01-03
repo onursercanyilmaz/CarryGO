@@ -18,7 +18,7 @@ namespace CarryGO.Classes
     class Employee : Person
     {
 
-        SqlConnection sqlcon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\CarryGODB.mdf;Integrated Security=True;Connect Timeout=30");
+        
         int password;
         object departmentID;
        
@@ -33,13 +33,9 @@ namespace CarryGO.Classes
 
             try
             {
-                sqlcon.Open();
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Employee", sqlcon);
-                DataTable dtb = new DataTable();
-                sda.Fill(dtb);
+                string query = "SELECT * FROM Employee";
+                databaseHelper.ExecuteQuerys(query, dgv);
 
-                dgv.DataSource = dtb;
-                sqlcon.Close();
             }
             catch (Exception)
             {
@@ -57,20 +53,39 @@ namespace CarryGO.Classes
             try
             {
                 string query = "INSERT INTO Employee(FirstName,LastName,EmployeeGender,EmployeeEmail,EmployeePassword,EmployeeAddress,EmployeePhone, DepartmentID) VALUES (@FirstName,@LastName,@EmployeeGender,@EmployeeEmail,@EmployeePassword,@EmployeeAddress,@EmployeePhone, @DepartmentID)";
-                databaseHelper.ExecuteQuery(query);
-                SqlCommand cmd = new SqlCommand(query,sqlcon);
-                cmd.Parameters.AddWithValue("@FirstName", FirstName);
-                cmd.Parameters.AddWithValue("@LastName",LastName);
-                cmd.Parameters.AddWithValue("@EmployeeGender",Gender);
-                cmd.Parameters.AddWithValue("@EmployeeEmail",Email);
-                cmd.Parameters.AddWithValue("@EmployeePassword",Password);
-                cmd.Parameters.AddWithValue("@EmployeeAddress",Address);
-                cmd.Parameters.AddWithValue("@EmployeePhone",Phone);
-                cmd.Parameters.AddWithValue("@DepartmentID",DepartmentID);
-                sqlcon.Open();
-                cmd.ExecuteNonQuery();
 
-                sqlcon.Close();
+                SqlParameter[] parameters = new SqlParameter[8];
+
+              
+                parameters[0] = new SqlParameter("FirstName", FirstName);
+                parameters[1] = new SqlParameter("LastName", LastName);
+                parameters[2] = new SqlParameter("EmployeeGender", Gender);
+                parameters[3] = new SqlParameter("EmployeeEmail", Email);
+                parameters[4] = new SqlParameter("EmployeePassword", Password);
+                parameters[5] = new SqlParameter("EmployeeAddress", Address);
+                parameters[6] = new SqlParameter("EmployeePhone", Phone);
+                parameters[7] = new SqlParameter("DepartmentID", DepartmentID);
+
+
+                databaseHelper.ExecuteNonQuery(query, parameters);
+
+
+
+
+
+                //SqlCommand cmd = new SqlCommand(query,sqlcon);
+                //cmd.Parameters.AddWithValue("@FirstName", FirstName);
+                //cmd.Parameters.AddWithValue("@LastName",LastName);
+                //cmd.Parameters.AddWithValue("@EmployeeGender",Gender);
+                //cmd.Parameters.AddWithValue("@EmployeeEmail",Email);
+                //cmd.Parameters.AddWithValue("@EmployeePassword",Password);
+                //cmd.Parameters.AddWithValue("@EmployeeAddress",Address);
+                //cmd.Parameters.AddWithValue("@EmployeePhone",Phone);
+                //cmd.Parameters.AddWithValue("@DepartmentID",DepartmentID);
+                //sqlcon.Open();
+                //cmd.ExecuteNonQuery();
+
+                //sqlcon.Close();
                
                 
                 
@@ -79,10 +94,7 @@ namespace CarryGO.Classes
             {
                 throw new Exception("Adding Employee Error: " + ex.Message);
             }
-            finally
-            {
-                sqlcon.Close();
-            }
+            
 
 
         }
@@ -109,10 +121,7 @@ namespace CarryGO.Classes
 
                 throw new Exception("Deleting Employee Error: " + ex.Message);
             }
-            finally
-            {
-                sqlcon.Close();
-            }
+            
             
             
         }
@@ -123,20 +132,37 @@ namespace CarryGO.Classes
                
                 string query = "UPDATE Employee SET FirstName=@FirstName,LastName=@LastName,EmployeeGender=@EmployeeGender,EmployeeEmail=@EmployeeEmail,EmployeePassword=@EmployeePassword,EmployeeAddress=@EmployeeAddress,EmployeePhone=@EmployeePhone, DepartmentID=@DepartmentID WHERE EmployeeID=@EmployeeID";
 
-                SqlCommand cmd = new SqlCommand(query, sqlcon);
-                cmd.Parameters.AddWithValue("@EmployeeID", ID);
-                cmd.Parameters.AddWithValue("@FirstName", FirstName);
-                cmd.Parameters.AddWithValue("@LastName", LastName);
-                cmd.Parameters.AddWithValue("@EmployeeGender", Gender);
-                cmd.Parameters.AddWithValue("@EmployeeEmail", Email);
-                cmd.Parameters.AddWithValue("@EmployeePassword", Password);
-                cmd.Parameters.AddWithValue("@EmployeeAddress", Address);
-                cmd.Parameters.AddWithValue("@EmployeePhone", Phone);
-                cmd.Parameters.AddWithValue("@DepartmentID", DepartmentID);
-                sqlcon.Open();
-                cmd.ExecuteNonQuery();
+                SqlParameter[] parameters = new SqlParameter[9];
 
-                sqlcon.Close();
+                parameters[0] = new SqlParameter("EmployeeID", ID);
+                parameters[1] = new SqlParameter("FirstName", FirstName);
+                parameters[2] = new SqlParameter("LastName", LastName);
+                parameters[3] = new SqlParameter("EmployeeGender", Gender);
+                parameters[4] = new SqlParameter("EmployeeEmail", Email);
+                parameters[5] = new SqlParameter("EmployeePassword", Password);
+                parameters[6] = new SqlParameter("EmployeeAddress", Address);
+                parameters[7] = new SqlParameter("EmployeePhone", Phone);
+                parameters[8] = new SqlParameter("DepartmentID", DepartmentID);
+
+
+                databaseHelper.ExecuteNonQuery(query, parameters);
+
+
+
+                //SqlCommand cmd = new SqlCommand(query, sqlcon);
+                //cmd.Parameters.AddWithValue("@EmployeeID", ID);
+                //cmd.Parameters.AddWithValue("@FirstName", FirstName);
+                //cmd.Parameters.AddWithValue("@LastName", LastName);
+                //cmd.Parameters.AddWithValue("@EmployeeGender", Gender);
+                //cmd.Parameters.AddWithValue("@EmployeeEmail", Email);
+                //cmd.Parameters.AddWithValue("@EmployeePassword", Password);
+                //cmd.Parameters.AddWithValue("@EmployeeAddress", Address);
+                //cmd.Parameters.AddWithValue("@EmployeePhone", Phone);
+                //cmd.Parameters.AddWithValue("@DepartmentID", DepartmentID);
+                //sqlcon.Open();
+                //cmd.ExecuteNonQuery();
+
+                //sqlcon.Close();
                
 
 
@@ -156,22 +182,22 @@ namespace CarryGO.Classes
             try
             {
 
-                sqlcon.Open();
                 string query = "SELECT * FROM Employee WHERE EmployeeID ='" + ID + "'";
-                SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
-                DataTable dtbl = new DataTable();
-                sda.Fill(dtbl);
-                dgv.DataSource = dtbl;
-                sqlcon.Close();
+                databaseHelper.ExecuteQuerys(query, dgv);
+
+
+
+                //SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+                //DataTable dtbl = new DataTable();
+                //sda.Fill(dtbl);
+                //dgv.DataSource = dtbl;
+                //sqlcon.Close();
             }
             catch (Exception ex)
             {
                 throw new Exception("Finding Employee Error: " + ex.Message);
             }
-            finally
-            {
-                sqlcon.Close();
-            }
+           
 
 
 
@@ -181,42 +207,49 @@ namespace CarryGO.Classes
             try
             {
 
-                sqlcon.Open();
                 string query = "SELECT * FROM Employee WHERE FirstName LIKE '" + FirstName + "%'";
-                SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
-                DataTable dtbl = new DataTable();
-                sda.Fill(dtbl);
-                dgv.DataSource = dtbl;
-                sqlcon.Close();
+                databaseHelper.ExecuteQuerys(query, dgv);
+
+                //SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+                //DataTable dtbl = new DataTable();
+                //sda.Fill(dtbl);
+                //dgv.DataSource = dtbl;
+                //sqlcon.Close();
             }
             catch (Exception ex)
             {
                 throw new Exception("Finding Employee Error: " + ex.Message);
                 
             }
-            finally
-            {
-                sqlcon.Close();
-            }
+            
 
         }
-       
-        public override void  Login(int ID, int Password) 
+
+        public override Person Login(int ID, int Password)
         {
-           
             try
             {
-                
-                sqlcon.Open();
                 string query = "SELECT * FROM Employee WHERE EmployeeID ='" + ID + "' AND EmployeePassword='" + Password + "'";
-                SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
-                DataTable dtbl = new DataTable();
-                sda.Fill(dtbl);
-               
+                var dt = databaseHelper.ExecuteQuery(query);
+
+                if (dt.Rows.Count > 0)
+                {
+                    Employee emp = new Employee();
+                    emp.ID = int.Parse(dt.Rows[0]["EmployeeID"].ToString());
+ 
+                    emp.Password = int.Parse(dt.Rows[0]["EmployeePassword"].ToString());
+
+                    return emp;
+                }
+                else
+                {
+                    return null;
+                }
+
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception("Log In Error: " + ex.Message);
             }
         }
         public override void Logout() 

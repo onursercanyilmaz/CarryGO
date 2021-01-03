@@ -28,14 +28,14 @@ namespace CarryGO.userControls
         {
             try
             {
-                int id = int.Parse(EnquiryBox.Text.Trim());
+                string id = EnquiryBox.Text.Trim();
                 cargo.SearchByEnquiry(id, dataCargo);
                 errorLabel.Text = "✔️ Cargo successfully found!";
 
                 if(dataCargo.Rows.Count <= 1)
                     errorLabel.Text = "❌ Cargo couldn't found!";
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 errorLabel.Text = "❌ Cargo couldn't found!";
             }

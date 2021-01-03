@@ -574,7 +574,6 @@ namespace CarryGO.userControls
         private System.Windows.Forms.TextBox AddressBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox CustomerNameBox;
-        private System.Windows.Forms.DataGridView dataCustomer;
         private System.Windows.Forms.Panel panelBottom;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnAddCustomer;
@@ -592,5 +591,6 @@ namespace CarryGO.userControls
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox IDBox;
         private System.Windows.Forms.Button btnSearchbyName;
+        public System.Windows.Forms.DataGridView dataCustomer;
     }
 }

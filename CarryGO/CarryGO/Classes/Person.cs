@@ -41,7 +41,8 @@ namespace CarryGO.Classes
         public virtual void Update(int ID, string FirstName, string LastName, object Gender, string Email, int Password, string Address, long Phone, object DepartmentID) { }
         public virtual void SearchByID(DataGridView dgv, int ID) { }
         public virtual void SearchByName(string FirstName, DataGridView dgv) { }
-        public virtual void Login(int ID, int Password) { }
+        public abstract Person Login(int ID, int Password);
+        
         public virtual void Logout() { }
 
 

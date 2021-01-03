@@ -103,6 +103,7 @@
     <Compile Include="Classes\Bill.cs" />
     <Compile Include="Classes\Cargo.cs" />
     <Compile Include="Classes\databaseHelper.cs" />
+    <Compile Include="Classes\DGVPrinter.cs" />
     <Compile Include="Forms\AddEmployeePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +130,12 @@
     </Compile>
     <Compile Include="Forms\MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\sendMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\sendMail.Designer.cs">
+      <DependentUpon>sendMail.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -193,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\sendMail.resx">
+      <DependentUpon>sendMail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -312,6 +322,8 @@
     <Content Include="Resources\11.png" />
     <Content Include="Resources\13.png" />
     <Content Include="Resources\9.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\Screenshot_2021-01-03 WELCOME.png" />
     <None Include="Resources\searchbyName.png" />
     <None Include="Resources\ViewCostumer.png" />
     <None Include="Resources\Screenshot_2020-12-30 WELCOME%282%29.png" />
@@ -342,6 +354,8 @@
     <None Include="Resources\bill1.png" />
     <None Include="Resources\announceBackground1.png" />
     <None Include="Resources\addCustomer.png" />
+    <None Include="Resources\back.png" />
+    <None Include="Resources\atach.png" />
     <Content Include="Resources\enquiry.png" />
     <None Include="Resources\intransaction1.png" />
     <None Include="Resources\newcargo3.png" />

@@ -32,12 +32,14 @@ namespace CarryGO.userControls
             this.components = new System.ComponentModel.Container();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label14 = new System.Windows.Forms.Label();
+            this.BillingIDBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.PriceBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ReceiverLastName = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
@@ -62,7 +64,7 @@ namespace CarryGO.userControls
             this.label2 = new System.Windows.Forms.Label();
             this.SenderBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ReceiverBox = new System.Windows.Forms.TextBox();
+            this.ReceiverName = new System.Windows.Forms.TextBox();
             this.dataCargo = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.transactionBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -74,8 +76,10 @@ namespace CarryGO.userControls
             this.panel3 = new System.Windows.Forms.Panel();
             this.panelTOP = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.CargoIDBox = new System.Windows.Forms.TextBox();
+            this.ReceiverID = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSeeOldCustomers = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -83,6 +87,9 @@ namespace CarryGO.userControls
             this.btnBill = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.errorLabel = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.emailBox = new System.Windows.Forms.TextBox();
+            this.btnReCode = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -101,7 +108,7 @@ namespace CarryGO.userControls
             this.panelTOP.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSeeOldCustomers)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
@@ -115,12 +122,15 @@ namespace CarryGO.userControls
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.AutoScroll = true;
+            this.splitContainer1.Panel1.Controls.Add(this.btnReCode);
+            this.splitContainer1.Panel1.Controls.Add(this.label14);
+            this.splitContainer1.Panel1.Controls.Add(this.BillingIDBox);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.label13);
             this.splitContainer1.Panel1.Controls.Add(this.label12);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
             this.splitContainer1.Panel1.Controls.Add(this.PriceBox);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.ReceiverLastName);
             this.splitContainer1.Panel1.Controls.Add(this.panel5);
             this.splitContainer1.Panel1.Controls.Add(this.PaymentComboBox);
             this.splitContainer1.Panel1.Controls.Add(this.TransactionComboBox);
@@ -136,7 +146,7 @@ namespace CarryGO.userControls
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.SenderBox);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.ReceiverBox);
+            this.splitContainer1.Panel1.Controls.Add(this.ReceiverName);
             // 
             // splitContainer1.Panel2
             // 
@@ -144,6 +154,29 @@ namespace CarryGO.userControls
             this.splitContainer1.Size = new System.Drawing.Size(1232, 557);
             this.splitContainer1.SplitterDistance = 322;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Google Sans", 10F, System.Drawing.FontStyle.Bold);
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(44, 451);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(64, 21);
+            this.label14.TabIndex = 39;
+            this.label14.Text = "*Bill ID";
+            // 
+            // BillingIDBox
+            // 
+            this.BillingIDBox.BackColor = System.Drawing.Color.Coral;
+            this.BillingIDBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.BillingIDBox.Font = new System.Drawing.Font("Google Sans Medium", 14F, System.Drawing.FontStyle.Bold);
+            this.BillingIDBox.ForeColor = System.Drawing.Color.White;
+            this.BillingIDBox.Location = new System.Drawing.Point(115, 451);
+            this.BillingIDBox.Name = "BillingIDBox";
+            this.BillingIDBox.Size = new System.Drawing.Size(205, 30);
+            this.BillingIDBox.TabIndex = 38;
+            this.BillingIDBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -183,7 +216,7 @@ namespace CarryGO.userControls
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Google Sans", 10F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(50, 418);
+            this.label6.Location = new System.Drawing.Point(50, 412);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 21);
             this.label6.TabIndex = 32;
@@ -195,23 +228,23 @@ namespace CarryGO.userControls
             this.PriceBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PriceBox.Font = new System.Drawing.Font("Google Sans Medium", 14F, System.Drawing.FontStyle.Bold);
             this.PriceBox.ForeColor = System.Drawing.Color.White;
-            this.PriceBox.Location = new System.Drawing.Point(117, 412);
+            this.PriceBox.Location = new System.Drawing.Point(117, 408);
             this.PriceBox.Name = "PriceBox";
             this.PriceBox.Size = new System.Drawing.Size(205, 30);
             this.PriceBox.TabIndex = 31;
             this.PriceBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox1
+            // ReceiverLastName
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Coral;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Google Sans Medium", 14F, System.Drawing.FontStyle.Bold);
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(116, 67);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 30);
-            this.textBox1.TabIndex = 29;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ReceiverLastName.BackColor = System.Drawing.Color.Coral;
+            this.ReceiverLastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ReceiverLastName.Font = new System.Drawing.Font("Google Sans Medium", 14F, System.Drawing.FontStyle.Bold);
+            this.ReceiverLastName.ForeColor = System.Drawing.Color.White;
+            this.ReceiverLastName.Location = new System.Drawing.Point(116, 67);
+            this.ReceiverLastName.Name = "ReceiverLastName";
+            this.ReceiverLastName.Size = new System.Drawing.Size(205, 30);
+            this.ReceiverLastName.TabIndex = 29;
+            this.ReceiverLastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel5
             // 
@@ -220,9 +253,9 @@ namespace CarryGO.userControls
             this.panel5.Controls.Add(this.btnUpdate);
             this.panel5.Controls.Add(this.btnAdd);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 457);
+            this.panel5.Location = new System.Drawing.Point(0, 487);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(322, 100);
+            this.panel5.Size = new System.Drawing.Size(322, 70);
             this.panel5.TabIndex = 28;
             // 
             // btnDelete
@@ -235,11 +268,12 @@ namespace CarryGO.userControls
             this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Location = new System.Drawing.Point(93, 19);
+            this.btnDelete.Location = new System.Drawing.Point(93, 1);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(63, 66);
             this.btnDelete.TabIndex = 30;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnView
             // 
@@ -251,7 +285,7 @@ namespace CarryGO.userControls
             this.btnView.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnView.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnView.Location = new System.Drawing.Point(245, 19);
+            this.btnView.Location = new System.Drawing.Point(245, 1);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(63, 66);
             this.btnView.TabIndex = 29;
@@ -268,11 +302,12 @@ namespace CarryGO.userControls
             this.btnUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Location = new System.Drawing.Point(169, 19);
+            this.btnUpdate.Location = new System.Drawing.Point(169, 1);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(63, 66);
             this.btnUpdate.TabIndex = 28;
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -284,11 +319,12 @@ namespace CarryGO.userControls
             this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Location = new System.Drawing.Point(14, 19);
+            this.btnAdd.Location = new System.Drawing.Point(14, 1);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(66, 63);
             this.btnAdd.TabIndex = 27;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // PaymentComboBox
             // 
@@ -352,9 +388,9 @@ namespace CarryGO.userControls
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(52, 371);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 21);
+            this.label7.Size = new System.Drawing.Size(58, 21);
             this.label7.TabIndex = 23;
-            this.label7.Text = "Type";
+            this.label7.Text = "*Type";
             // 
             // label11
             // 
@@ -455,9 +491,9 @@ namespace CarryGO.userControls
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(34, 115);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 21);
+            this.label2.Size = new System.Drawing.Size(76, 21);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Sender";
+            this.label2.Text = "*Sender";
             // 
             // SenderBox
             // 
@@ -482,22 +518,24 @@ namespace CarryGO.userControls
             this.label1.TabIndex = 1;
             this.label1.Text = "Receiver";
             // 
-            // ReceiverBox
+            // ReceiverName
             // 
-            this.ReceiverBox.BackColor = System.Drawing.Color.Coral;
-            this.ReceiverBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ReceiverBox.Font = new System.Drawing.Font("Google Sans Medium", 14F, System.Drawing.FontStyle.Bold);
-            this.ReceiverBox.ForeColor = System.Drawing.Color.White;
-            this.ReceiverBox.Location = new System.Drawing.Point(116, 27);
-            this.ReceiverBox.Name = "ReceiverBox";
-            this.ReceiverBox.Size = new System.Drawing.Size(205, 30);
-            this.ReceiverBox.TabIndex = 0;
-            this.ReceiverBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ReceiverName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.ReceiverName.BackColor = System.Drawing.Color.Coral;
+            this.ReceiverName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ReceiverName.Font = new System.Drawing.Font("Google Sans Medium", 14F, System.Drawing.FontStyle.Bold);
+            this.ReceiverName.ForeColor = System.Drawing.Color.White;
+            this.ReceiverName.Location = new System.Drawing.Point(116, 27);
+            this.ReceiverName.Name = "ReceiverName";
+            this.ReceiverName.Size = new System.Drawing.Size(205, 30);
+            this.ReceiverName.TabIndex = 0;
+            this.ReceiverName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dataCargo
             // 
             this.dataCargo.AllowUserToAddRows = false;
             this.dataCargo.AllowUserToDeleteRows = false;
+            this.dataCargo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataCargo.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataCargo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataCargo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -505,8 +543,10 @@ namespace CarryGO.userControls
             this.dataCargo.Name = "dataCargo";
             this.dataCargo.ReadOnly = true;
             this.dataCargo.RowHeadersWidth = 51;
+            this.dataCargo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataCargo.Size = new System.Drawing.Size(906, 557);
             this.dataCargo.TabIndex = 0;
+            this.dataCargo.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataCargo_CellEnter);
             // 
             // panel2
             // 
@@ -559,13 +599,42 @@ namespace CarryGO.userControls
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.emailBox);
+            this.panel4.Controls.Add(this.CargoIDBox);
+            this.panel4.Controls.Add(this.ReceiverID);
             this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Controls.Add(this.btnSeeOldCustomers);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1298, 153);
             this.panel4.TabIndex = 3;
+            // 
+            // CargoIDBox
+            // 
+            this.CargoIDBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(50)))), ((int)(((byte)(72)))));
+            this.CargoIDBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.CargoIDBox.Font = new System.Drawing.Font("Google Sans Medium", 14F, System.Drawing.FontStyle.Bold);
+            this.CargoIDBox.ForeColor = System.Drawing.Color.White;
+            this.CargoIDBox.Location = new System.Drawing.Point(297, 84);
+            this.CargoIDBox.Name = "CargoIDBox";
+            this.CargoIDBox.Size = new System.Drawing.Size(39, 30);
+            this.CargoIDBox.TabIndex = 39;
+            this.CargoIDBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.CargoIDBox.Visible = false;
+            // 
+            // ReceiverID
+            // 
+            this.ReceiverID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(50)))), ((int)(((byte)(72)))));
+            this.ReceiverID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ReceiverID.Font = new System.Drawing.Font("Google Sans Medium", 14F, System.Drawing.FontStyle.Bold);
+            this.ReceiverID.ForeColor = System.Drawing.Color.White;
+            this.ReceiverID.Location = new System.Drawing.Point(298, 120);
+            this.ReceiverID.Name = "ReceiverID";
+            this.ReceiverID.Size = new System.Drawing.Size(39, 30);
+            this.ReceiverID.TabIndex = 37;
+            this.ReceiverID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ReceiverID.Visible = false;
             // 
             // pictureBox2
             // 
@@ -578,15 +647,16 @@ namespace CarryGO.userControls
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
+            // btnSeeOldCustomers
             // 
-            this.pictureBox1.Image = global::CarryGO.Properties.Resources.postman;
-            this.pictureBox1.Location = new System.Drawing.Point(132, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(160, 140);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btnSeeOldCustomers.Image = global::CarryGO.Properties.Resources.postman;
+            this.btnSeeOldCustomers.Location = new System.Drawing.Point(132, 27);
+            this.btnSeeOldCustomers.Name = "btnSeeOldCustomers";
+            this.btnSeeOldCustomers.Size = new System.Drawing.Size(160, 140);
+            this.btnSeeOldCustomers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSeeOldCustomers.TabIndex = 0;
+            this.btnSeeOldCustomers.TabStop = false;
+            this.btnSeeOldCustomers.Click += new System.EventHandler(this.btnSeeOldCustomers_Click);
             // 
             // panel1
             // 
@@ -618,7 +688,7 @@ namespace CarryGO.userControls
             this.panel6.Controls.Add(this.btnPrint);
             this.panel6.Controls.Add(this.errorLabel);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 784);
+            this.panel6.Location = new System.Drawing.Point(0, 854);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1298, 86);
             this.panel6.TabIndex = 24;
@@ -641,6 +711,7 @@ namespace CarryGO.userControls
             this.btnEmail.Size = new System.Drawing.Size(119, 59);
             this.btnEmail.TabIndex = 27;
             this.btnEmail.UseVisualStyleBackColor = false;
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
             // btnBill
             // 
@@ -660,6 +731,7 @@ namespace CarryGO.userControls
             this.btnBill.Size = new System.Drawing.Size(61, 59);
             this.btnBill.TabIndex = 26;
             this.btnBill.UseVisualStyleBackColor = false;
+            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
             // 
             // btnPrint
             // 
@@ -679,6 +751,7 @@ namespace CarryGO.userControls
             this.btnPrint.Size = new System.Drawing.Size(119, 56);
             this.btnPrint.TabIndex = 25;
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // errorLabel
             // 
@@ -688,9 +761,45 @@ namespace CarryGO.userControls
             this.errorLabel.ForeColor = System.Drawing.SystemColors.Highlight;
             this.errorLabel.Location = new System.Drawing.Point(921, 36);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(374, 30);
+            this.errorLabel.Size = new System.Drawing.Size(0, 30);
             this.errorLabel.TabIndex = 2;
-            this.errorLabel.Text = "New Cargo successfully added.";
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // emailBox
+            // 
+            this.emailBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.emailBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(50)))), ((int)(((byte)(72)))));
+            this.emailBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.emailBox.Font = new System.Drawing.Font("Google Sans Medium", 14F, System.Drawing.FontStyle.Bold);
+            this.emailBox.ForeColor = System.Drawing.Color.White;
+            this.emailBox.Location = new System.Drawing.Point(45, 69);
+            this.emailBox.Name = "emailBox";
+            this.emailBox.Size = new System.Drawing.Size(48, 30);
+            this.emailBox.TabIndex = 41;
+            this.emailBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.emailBox.Visible = false;
+            // 
+            // btnReCode
+            // 
+            this.btnReCode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReCode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReCode.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnReCode.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnReCode.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnReCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnReCode.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnReCode.Location = new System.Drawing.Point(282, 307);
+            this.btnReCode.Name = "btnReCode";
+            this.btnReCode.Size = new System.Drawing.Size(40, 32);
+            this.btnReCode.TabIndex = 40;
+            this.btnReCode.Text = "♻️";
+            this.btnReCode.UseVisualStyleBackColor = true;
+            this.btnReCode.Click += new System.EventHandler(this.btnReCode_Click);
             // 
             // ucNewCargo
             // 
@@ -703,7 +812,7 @@ namespace CarryGO.userControls
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Name = "ucNewCargo";
-            this.Size = new System.Drawing.Size(1298, 870);
+            this.Size = new System.Drawing.Size(1298, 940);
             this.Load += new System.EventHandler(this.ucNewCargo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -723,8 +832,9 @@ namespace CarryGO.userControls
             ((System.ComponentModel.ISupportInitialize)(this.transactionsBindingSource)).EndInit();
             this.panelTOP.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSeeOldCustomers)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -745,11 +855,10 @@ namespace CarryGO.userControls
         private System.Windows.Forms.TextBox EnquiryBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox AddressBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox SenderBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox ReceiverBox;
+        private System.Windows.Forms.TextBox ReceiverName;
         private System.Windows.Forms.DataGridView dataCargo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.BindingSource transactionBindingSource;
@@ -767,7 +876,7 @@ namespace CarryGO.userControls
         private System.Windows.Forms.Panel panelTOP;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnSeeOldCustomers;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnDelete;
@@ -782,9 +891,17 @@ namespace CarryGO.userControls
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox PriceBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ReceiverLastName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox AddressBox;
+        private System.Windows.Forms.TextBox ReceiverID;
+        private System.Windows.Forms.TextBox CargoIDBox;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox BillingIDBox;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.TextBox emailBox;
+        private System.Windows.Forms.Button btnReCode;
     }
 }

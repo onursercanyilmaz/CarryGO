@@ -47,7 +47,7 @@ namespace CarryGO.userControls
                 string lastname = CustomerLastNameBox.Text.Trim();
                 object gender = GenderComboBox.SelectedValue;
                 string mail = MailBox.Text.Trim();
-                int phone = int.Parse(PhoneBox.Text.Trim());
+                long phone = long.Parse(PhoneBox.Text.Trim());
                 string address = AddressBox.Text.Trim();
                 int pass = 0;
 
@@ -55,7 +55,7 @@ namespace CarryGO.userControls
                 errorLabel.Text = "✔️ Customer successfully added!";
                 customer.View(dataCustomer);
             }
-            catch (Exception)
+            catch (Exception )
             {
 
                 errorLabel.Text = "❌ Adding Customer Error!";
@@ -130,6 +130,7 @@ namespace CarryGO.userControls
                 }
 
                 customer.Update(id, name, lastname, gender, email, password, address, phone);
+                customer.View(dataCustomer);
                 errorLabel.Text = "✔️ Customer successfully updated";
                 
             }
@@ -143,7 +144,7 @@ namespace CarryGO.userControls
         private void dataCustomer_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
 
-            //fill the texbox and combobox with Employee table data
+            //fill the texbox and combobox with Customer table data
             IDBox.Text = dataCustomer.CurrentRow.Cells[0].Value.ToString();
             CustomerNameBox.Text = dataCustomer.CurrentRow.Cells[1].Value.ToString();
             CustomerLastNameBox.Text = dataCustomer.CurrentRow.Cells[2].Value.ToString();
@@ -161,8 +162,13 @@ namespace CarryGO.userControls
             {
                 errorLabel.Text = " ";
                 string name = CustomerNameBox.Text.Trim();
-                customer.SearchByName(name, dataCustomer);
-                errorLabel.Text = "✔️ Customer successfully found!";
+                customer.SearchByName(name,dataCustomer);
+
+                if(dataCustomer.Rows.Count>0)
+                    errorLabel.Text = "✔️ Customer successfully found!";
+                else
+                    errorLabel.Text = "❌ Customer coulnd't found!";
+
             }
             catch (Exception)
             {

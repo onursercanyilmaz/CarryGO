@@ -12,7 +12,7 @@ namespace CarryGO.Classes
     class Customer : Person
     {
 
-        SqlConnection sqlcon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\CarryGODB.mdf;Integrated Security=True;Connect Timeout=30");
+        
         int password;
         object departmentID;
 
@@ -29,31 +29,42 @@ namespace CarryGO.Classes
             try
             {
                 string query = "INSERT INTO Customer(CustomerName,CustomerLastName,CustomerGender,CustomerEmail,CustomerAddress,CustomerPhone) VALUES (@CustomerName,@CustomerLastName,@CustomerGender,@CustomerEmail,@CustomerAddress,@CustomerPhone)";
-                databaseHelper.ExecuteQuery(query);
-                SqlCommand cmd = new SqlCommand(query, sqlcon);
-                cmd.Parameters.AddWithValue("@CustomerName", FirstName);
-                cmd.Parameters.AddWithValue("@CustomerLastName", LastName);
-                cmd.Parameters.AddWithValue("@CustomerGender", Gender);
-                cmd.Parameters.AddWithValue("@CustomerEmail", Email);
-                cmd.Parameters.AddWithValue("@CustomerAddress", Address);
-                cmd.Parameters.AddWithValue("@CustomerPhone", Phone);
-                
-                sqlcon.Open();
-                cmd.ExecuteNonQuery();
+                SqlParameter[] parameters = new SqlParameter[6];
 
-                sqlcon.Close();
+                parameters[0] = new SqlParameter("CustomerName", FirstName);
+                parameters[1] = new SqlParameter("CustomerLastName", LastName);
+                parameters[2] = new SqlParameter("CustomerGender", Gender);
+                parameters[3] = new SqlParameter("CustomerEmail", Email);
+                parameters[4] = new SqlParameter("CustomerAddress", Address);
+                parameters[5] = new SqlParameter("CustomerPhone", Phone);
+              
+
+                databaseHelper.ExecuteNonQuery(query, parameters);
+
+
+
+
+
+
+                //SqlCommand cmd = new SqlCommand(query, sqlcon);
+                //cmd.Parameters.AddWithValue("@CustomerName", FirstName);
+                //cmd.Parameters.AddWithValue("@CustomerLastName", LastName);
+                //cmd.Parameters.AddWithValue("@CustomerGender", Gender);
+                //cmd.Parameters.AddWithValue("@CustomerEmail", Email);
+                //cmd.Parameters.AddWithValue("@CustomerAddress", Address);
+                //cmd.Parameters.AddWithValue("@CustomerPhone", Phone);
+                
+                //sqlcon.Open();
+                //cmd.ExecuteNonQuery();
+
+                //sqlcon.Close();
 
             }
             catch (Exception ex)
             {
                 throw new Exception("Adding Customer Error: " + ex.Message);
             }
-            finally
-            {
-                sqlcon.Close();
-            }
-
-
+           
         }
 
         public override void Delete(int ID ) 
@@ -73,10 +84,7 @@ namespace CarryGO.Classes
 
                 throw new Exception("Deleting Employee Error: " + ex.Message);
             }
-            finally
-            {
-                sqlcon.Close();
-            }
+           
 
         }
        
@@ -87,20 +95,32 @@ namespace CarryGO.Classes
 
                 string query = "UPDATE Customer SET CustomerName=@CustomerName,CustomerLastName=@CustomerLastName,CustomerGender=@CustomerGender,CustomerEmail=@CustomerEmail,CustomerAddress=@CustomerAddress,CustomerPhone=@CustomerPhone WHERE CustomerID=@CustomerID";
 
-                SqlCommand cmd = new SqlCommand(query, sqlcon);
-                cmd.Parameters.AddWithValue("@CustomerID", ID);
-                cmd.Parameters.AddWithValue("@CustomerName", FirstName);
-                cmd.Parameters.AddWithValue("@CustomerLastName", LastName);
-                cmd.Parameters.AddWithValue("@CustomerGender", Gender);
-                cmd.Parameters.AddWithValue("@CustomerEmail", Email);
-            
-                cmd.Parameters.AddWithValue("@CustomerAddress", Address);
-                cmd.Parameters.AddWithValue("@CustomerPhone", Phone);
-              
-                sqlcon.Open();
-                cmd.ExecuteNonQuery();
+                SqlParameter[] parameters = new SqlParameter[7];
 
-                sqlcon.Close();
+                parameters[0] = new SqlParameter("CustomerID", ID);
+                parameters[1] = new SqlParameter("CustomerName", FirstName);
+                parameters[2] = new SqlParameter("CustomerLastName", LastName);
+                parameters[3] = new SqlParameter("CustomerGender", Gender);
+                parameters[4] = new SqlParameter("CustomerEmail", Email);
+                parameters[5] = new SqlParameter("CustomerAddress", Address);
+                parameters[6] = new SqlParameter("CustomerPhone", Phone);
+
+
+                databaseHelper.ExecuteNonQuery(query, parameters);
+
+                //SqlCommand cmd = new SqlCommand(query, sqlcon);
+                //cmd.Parameters.AddWithValue("@CustomerID", ID);
+                //cmd.Parameters.AddWithValue("@CustomerName", FirstName);
+                //cmd.Parameters.AddWithValue("@CustomerLastName", LastName);
+                //cmd.Parameters.AddWithValue("@CustomerGender", Gender);
+                //cmd.Parameters.AddWithValue("@CustomerEmail", Email);
+                //cmd.Parameters.AddWithValue("@CustomerAddress", Address);
+                //cmd.Parameters.AddWithValue("@CustomerPhone", Phone);
+              
+                //sqlcon.Open();
+                //cmd.ExecuteNonQuery();
+
+                //sqlcon.Close();
 
             }
             catch (Exception ex)
@@ -112,44 +132,45 @@ namespace CarryGO.Classes
 
         public override void View(DataGridView dgv)
         {
-            sqlcon.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Customer", sqlcon);
-            DataTable dtb = new DataTable();
-            sda.Fill(dtb);
-
-            dgv.DataSource = dtb;
-            sqlcon.Close();
+            string query = "SELECT * FROM Customer";
+            databaseHelper.ExecuteQuerys(query, dgv);
 
         }
 
        // public override void SearchByID(DataGridView dgv, int ID) {  }
-        public override void SearchByName(string FirstName, DataGridView dgv) 
+        public  override void SearchByName(string FirstName, DataGridView dgv) 
         {
             try
             {
 
-                sqlcon.Open();
                 string query = "SELECT * FROM Customer WHERE CustomerName LIKE '" + FirstName + "%'";
-                SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
-                DataTable dtbl = new DataTable();
-                sda.Fill(dtbl);
-                dgv.DataSource = dtbl;
-                sqlcon.Close();
+
+                SqlParameter[] parameters = new SqlParameter[1];
+
+              
+                parameters[0] = new SqlParameter("CustomerName", FirstName);
+                
+                databaseHelper.ExecuteQuerys(query,dgv,parameters);
+
+
+                //SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
+                //DataTable dtbl = new DataTable();
+                //sda.Fill(dtbl);
+                //dgv.DataSource = dtbl;
+                //sqlcon.Close();
             }
             catch (Exception ex)
             {
                 throw new Exception("Finding Customer Error: " + ex.Message);
 
             }
-            finally
-            {
-                sqlcon.Close();
-            }
+           
         }
 
-        public override void Login(int ID, int Password)
+        public override Person Login(int ID, int Password)
         {
-
+            Person p = new Customer();
+            return p;
         }
         public override void Logout() { }
 

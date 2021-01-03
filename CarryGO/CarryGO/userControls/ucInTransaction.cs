@@ -26,7 +26,7 @@ namespace CarryGO.userControls
             {
                 cargo.ListInTransaction(dataTransaction);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 errorLabel.Text = "Cargo couldn't found!";
             }

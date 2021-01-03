@@ -49,11 +49,23 @@ namespace CarryGO
             {
                 int id = int.Parse(idBox.Text.Trim().ToString());
                 int password = int.Parse(passwordBox.Text.Trim().ToString());
-                employee.Login(id, password);
-                
-                MainPage main = new MainPage();
-                this.Hide();
-                main.ShowDialog();
+             
+                var emp = employee.Login(id, password);
+                if (emp != null)
+                {
+                    MainPage main = new MainPage();
+                    this.Hide();
+                    main.ShowDialog();
+                }
+                else
+                {
+                    errorLabel.Text = "Email or Password is incorrect.";
+                    errorLabel.ForeColor = Color.Coral;
+                }
+
+
+
+              
             }
             catch (Exception)
             {

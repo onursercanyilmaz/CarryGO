@@ -52,7 +52,7 @@ namespace CarryGO.Classes
         {
             try
             {
-                string query = "INSERT INTO Employee(FirstName,LastName,EmployeeGender,EmployeeEmail,EmployeePassword,EmployeeAddress,EmployeePhone, DepartmentID) VALUES (@FirstName,@LastName,@EmployeeGender,@EmployeeEmail,@EmployeePassword,@EmployeeAddress,@EmployeePhone, @DepartmentID)";
+                string query = "INSERT INTO Employee(FirstName,LastName,EmployeeGender,EmployeeEmail,EmployeePassword,EmployeeAddress,EmployeePhone,DepartmentID) VALUES (@FirstName,@LastName,@EmployeeGender,@EmployeeEmail,@EmployeePassword,@EmployeeAddress,@EmployeePhone, @DepartmentID)";
 
                 SqlParameter[] parameters = new SqlParameter[8];
 
@@ -252,12 +252,7 @@ namespace CarryGO.Classes
                 throw new Exception("Log In Error: " + ex.Message);
             }
         }
-        public override void Logout() 
-        {
-            Login login = new Login();
-            login.Show();
         
-        }
 
     }
 }

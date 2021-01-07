@@ -33,5 +33,6 @@ C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\bin\Debug\Sys
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\bin\Debug\System.Security.Principal.Windows.xml
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.csproj.CopyComplete
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.userControls.ucCustomer.resources
-C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.csprojAssemblyReference.cache
 C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.Forms.sendMail.resources
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\obj\Debug\CarryGO.Forms.formSettings.resources
+C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\bin\Debug\dbSettings.sql

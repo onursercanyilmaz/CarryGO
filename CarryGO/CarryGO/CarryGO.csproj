@@ -113,6 +113,12 @@
     <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\Employee.cs" />
     <Compile Include="Classes\Person.cs" />
+    <Compile Include="Forms\formSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formSettings.Designer.cs">
+      <DependentUpon>formSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HelpPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +197,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\AddEmployeePage.resx">
       <DependentUpon>AddEmployeePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formSettings.resx">
+      <DependentUpon>formSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HelpPage.resx">
       <DependentUpon>HelpPage.cs</DependentUpon>
@@ -317,11 +326,17 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>CarryGODB.mdf</DependentUpon>
     </Content>
+    <Content Include="dbSettings.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Items\welcometoCarryGo.mp3" />
     <Content Include="Resources\111.png" />
     <Content Include="Resources\11.png" />
     <Content Include="Resources\13.png" />
     <Content Include="Resources\9.png" />
+    <Content Include="Resources\mywebsite.htm" />
+    <None Include="Resources\WELCOME6.png" />
+    <None Include="Resources\WELCOME5.png" />
     <None Include="Resources\exit.png" />
     <None Include="Resources\Screenshot_2021-01-03 WELCOME.png" />
     <None Include="Resources\searchbyName.png" />

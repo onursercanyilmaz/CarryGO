@@ -24,8 +24,16 @@ namespace CarryGO.userControls
         public ucNewCargo()
         {
             InitializeComponent();
-            Random rand = new Random();
-            EnquiryBox.Text = rand.Next(1000000, 9999999).ToString();
+            try
+            {
+                Random rand = new Random();
+                EnquiryBox.Text = rand.Next(1000000, 9999999).ToString();
+            }
+            catch (Exception)
+            {
+
+                errorLabel.Text = "❌ Couldn't generate enquiry id!";
+            }
 
         }
 
@@ -69,10 +77,10 @@ namespace CarryGO.userControls
                 errorLabel.Text = "✔️ Cargo successfully added";
                 
             }
-            catch (Exception ex )
+            catch (Exception)
             {
-               // errorLabel.Text = "❌ Cargo couldn't added!";
-                MessageBox.Show(ex.Message);
+               errorLabel.Text = "❌ Cargo couldn't added! \n Please click on customer";
+               
             }
         }
 
@@ -87,7 +95,7 @@ namespace CarryGO.userControls
             catch (Exception)
             {
 
-                errorLabel.Text = "Cargo details couldn't load!";
+                errorLabel.Text = "❌ Cargo details couldn't load!";
             }
             
         }
@@ -102,7 +110,7 @@ namespace CarryGO.userControls
             }
             catch (Exception)
             {
-                errorLabel.Text = "Customers couldn't load!";
+                errorLabel.Text = "❌ Customers couldn't load!";
             }
             
 
@@ -167,7 +175,7 @@ namespace CarryGO.userControls
             catch (Exception )
             {
               errorLabel.Text = "❌ Bill couldn't created!";
-               // MessageBox.Show(ex.Message);
+               
             }
         }
 
@@ -206,10 +214,10 @@ namespace CarryGO.userControls
                 errorLabel.Text = "✔️ Cargo successfully deleted!";
 
             }
-            catch (Exception ex )
+            catch (Exception )
             {
-                MessageBox.Show(ex.Message);
-               // errorLabel.Text = "❌ Cargo couldn't deleted!";
+               
+              errorLabel.Text = "❌ Cargo couldn't deleted!\nBe sure that you write bill id!";
                
             }
         }
@@ -224,47 +232,75 @@ namespace CarryGO.userControls
             }
             catch (Exception)
             {
-
-                throw;
+                errorLabel.Text = "❌ Couldn't print!";
             }
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            //Reference from
-            //https://raw.githubusercontent.com/vijaythapa333/DGVPrinter/master/DGVPrinter.cs
            
-            DGVPrinterHelper.DGVPrinter printer = new DGVPrinterHelper.DGVPrinter();
-            printer.Title = "Cargo Details";
-            printer.PageNumbers = true;
-            printer.Footer = "CarryGO INC. All Rights Reserved 2021";
-            dataCargo.Columns[0].Visible = false;
-            dataCargo.Columns[1].Visible = false;
-            dataCargo.Columns[7].Visible = false;
-            dataCargo.Columns[10].Visible = false;
-            printer.PrintDataGridView(dataCargo);
 
-            dataCargo.Columns[0].Visible = true;
-            dataCargo.Columns[1].Visible = true;
-            dataCargo.Columns[7].Visible = true;
-            dataCargo.Columns[10].Visible = true;
+            try
+            {
+                //Reference from
+                //https://raw.githubusercontent.com/vijaythapa333/DGVPrinter/master/DGVPrinter.cs
 
-            errorLabel.Text = "✔️ Printed successfully!";
+                DGVPrinterHelper.DGVPrinter printer = new DGVPrinterHelper.DGVPrinter();
+                printer.Title = "Cargo Details";
+                printer.PageNumbers = true;
+                printer.Footer = "CarryGO INC. All Rights Reserved 2021";
+                dataCargo.Columns[0].Visible = false;
+                dataCargo.Columns[1].Visible = false;
+                dataCargo.Columns[7].Visible = false;
+                dataCargo.Columns[10].Visible = false;
+                printer.PrintDataGridView(dataCargo);
+
+                dataCargo.Columns[0].Visible = true;
+                dataCargo.Columns[1].Visible = true;
+                dataCargo.Columns[7].Visible = true;
+                dataCargo.Columns[10].Visible = true;
+
+                errorLabel.Text = "✔️ Printed successfully!";
+            }
+            catch (Exception)
+            {
+                errorLabel.Text = "❌ Couldn't print!";
+            }
 
         }
 
         private void btnEmail_Click(object sender, EventArgs e)
         {
-            sendMail sendem = new sendMail(emailBox.Text, ReceiverName.Text, EnquiryBox.Text,PriceBox.Text );
-            sendem.StartPosition = FormStartPosition.CenterParent;
-            sendem.ShowDialog();
+           
+
+
+            try
+            {
+                sendMail sendem = new sendMail(emailBox.Text, ReceiverName.Text, EnquiryBox.Text, PriceBox.Text);
+                sendem.StartPosition = FormStartPosition.CenterParent;
+                sendem.ShowDialog();
+               
+            }
+            catch (Exception)
+            {
+                errorLabel.Text = "❌ Couldn't open email page!";
+            }
 
         }
 
         private void btnReCode_Click(object sender, EventArgs e)
         {
-            Random rand = new Random();
-            EnquiryBox.Text = rand.Next(1000000, 9999999).ToString();
+            try
+            {
+                Random rand = new Random();
+                EnquiryBox.Text = rand.Next(1000000, 9999999).ToString();
+            }
+            catch (Exception)
+            {
+
+                errorLabel.Text = "❌ Couldn't generate enquiry id!";
+            }
+            
         }
     }
 }

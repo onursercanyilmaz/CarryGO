@@ -11,7 +11,7 @@ namespace CarryGO.Classes
 {
     class Cargo
     {
-        SqlConnection sqlcon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\CarryGODB.mdf;Integrated Security=True;Connect Timeout=30");
+       
        
         int cargo_id;
         object transaction_id;
@@ -68,10 +68,7 @@ namespace CarryGO.Classes
             {
                 throw new Exception("Adding Cargo Error: " + ex.Message);
             }
-            finally
-            {
-                sqlcon.Close();
-            }
+           
 
         }
         public void DeleteCargo(int CargoID)
@@ -173,7 +170,6 @@ namespace CarryGO.Classes
             try
             {
 
-                sqlcon.Open();
 
 
                 string query = "SELECT co.CustomerID AS ReceiverID, cr.CustomerName +' '+ cr.CustomerLastName AS Receiver, co.Sender, cr.CustomerAddress AS ReceiverAddress,co.EnquiryID ,tn.TransactionName AS TransactionStatus,bg.Price,bg.BillingID FROM Cargo AS co " +
@@ -195,10 +191,7 @@ namespace CarryGO.Classes
                 throw new Exception("Finding Cargo Error: " + ex.Message);
 
             }
-            finally
-            {
-                sqlcon.Close();
-            }
+            
         }
 
         public void ListInTransaction(DataGridView dgv)
@@ -206,7 +199,7 @@ namespace CarryGO.Classes
             try
             {
 
-                sqlcon.Open();
+               
 
 
                 string query = "SELECT co.CustomerID AS ReceiverID, cr.CustomerName +' '+ cr.CustomerLastName AS Receiver, co.Sender, cr.CustomerAddress AS ReceiverAddress,co.EnquiryID ,tn.TransactionName AS TransactionStatus,bg.Price,bg.BillingID FROM Cargo AS co " +
@@ -228,10 +221,7 @@ namespace CarryGO.Classes
                 throw new Exception("Finding Cargo Error: " + ex.Message);
 
             }
-            finally
-            {
-                sqlcon.Close();
-            }
+           
         }
 
     }

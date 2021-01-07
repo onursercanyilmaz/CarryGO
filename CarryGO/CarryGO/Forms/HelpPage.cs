@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using CarryGO.Classes;
+using CarryGO.Forms;
 
 namespace CarryGO
 {
     public partial class HelpPage : Form
     {
+        Employee employee = new Employee();
         public HelpPage()
         {
             InitializeComponent();
@@ -34,32 +37,34 @@ namespace CarryGO
         {
             try
             {
-                SqlConnection sqlcon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\onursercanyilmaz\Documents\GitHub\CarryGO\CarryGO\CarryGO\CarryGODB.mdf;Integrated Security=True;Connect Timeout=30");
-                sqlcon.Open();
-                string query = "SELECT * FROM Employee WHERE FirstName ='" + IDBox.Text.Trim() + "' AND EmployeePassword='" + PasswordBox.Text.Trim() + "'";
-                SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
-                DataTable dtbl = new DataTable();
-                sda.Fill(dtbl);
-                if (dtbl.Rows.Count == 1)
+                int id = int.Parse(IDBox.Text.Trim().ToString());
+                int password = int.Parse(PasswordBox.Text.Trim().ToString());
+
+                var emp = employee.Login(id, password);
+                if (emp != null)
                 {
+                    AddEmployeePage main = new AddEmployeePage();
                     this.Hide();
-                    AddEmployeePage addEmployeePage = new AddEmployeePage();
-                    addEmployeePage.Show();
-                    sqlcon.Close();
+                    main.ShowDialog();
                 }
-                else if (IDBox.Text =="" && PasswordBox.Text=="")
+                else
                 {
-                    labelError.Text = "WRONG ADMIN ID/PASSWORD!";
+                    labelError.Text = "ID or Password is incorrect.";
+                    labelError.ForeColor = Color.Coral;
                 }
+
+
+
+
             }
             catch (Exception)
             {
 
-                labelError.Text = "WRONG ADMIN ID/PASSWORD!";
+                labelError.Text = "Please check you ID or Password!";
             }
-            
-            
-            
+
+
+
         }
 
         private void IDBox_TextChanged(object sender, EventArgs e)
@@ -70,6 +75,12 @@ namespace CarryGO
         private void PasswordBox_TextChanged(object sender, EventArgs e)
         {
             labelError.Text = "";
+        }
+
+        private void buttonEnter_Click(object sender, EventArgs e)
+        {
+            formSettings form = new formSettings();
+            form.ShowDialog();
         }
     }
 }

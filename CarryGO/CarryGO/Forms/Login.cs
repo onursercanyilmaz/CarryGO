@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
 using CarryGO.Classes;
+using CarryGO.Forms;
 
 namespace CarryGO
 { 
@@ -59,7 +60,7 @@ namespace CarryGO
                 }
                 else
                 {
-                    errorLabel.Text = "Email or Password is incorrect.";
+                    errorLabel.Text = "ID or Password is incorrect.";
                     errorLabel.ForeColor = Color.Coral;
                 }
 
@@ -88,7 +89,21 @@ namespace CarryGO
 
         private void Login_Load(object sender, EventArgs e)
         {
+            int isDbReady = int.Parse(databaseHelper.ReadConfigParameter("isDBReady"));
 
+            if(isDbReady == 0)
+            {
+                var result = MessageBox.Show("You need to configure your database.\n Do now?",
+                    "System Config Information", MessageBoxButtons.YesNo);
+
+                if(result == DialogResult.Yes)
+                {
+                    formSettings form = new formSettings();
+                    form.StartPosition = FormStartPosition.CenterParent;
+                    form.ShowDialog();
+                }
+              
+            }
         }
     }
 

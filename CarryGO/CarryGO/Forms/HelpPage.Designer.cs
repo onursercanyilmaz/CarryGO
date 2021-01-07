@@ -40,6 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.labelError = new System.Windows.Forms.Label();
+            this.buttonEnter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -180,6 +181,26 @@
             this.labelError.Size = new System.Drawing.Size(0, 18);
             this.labelError.TabIndex = 52;
             // 
+            // buttonEnter
+            // 
+            this.buttonEnter.BackColor = System.Drawing.Color.Transparent;
+            this.buttonEnter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonEnter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEnter.FlatAppearance.BorderSize = 0;
+            this.buttonEnter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.buttonEnter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.buttonEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEnter.Font = new System.Drawing.Font("Google Sans Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonEnter.ForeColor = System.Drawing.Color.White;
+            this.buttonEnter.Location = new System.Drawing.Point(11, 447);
+            this.buttonEnter.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonEnter.Name = "buttonEnter";
+            this.buttonEnter.Size = new System.Drawing.Size(141, 36);
+            this.buttonEnter.TabIndex = 53;
+            this.buttonEnter.Text = "⚙️ SETTINGS";
+            this.buttonEnter.UseVisualStyleBackColor = false;
+            this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
+            // 
             // HelpPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -187,6 +208,7 @@
             this.BackgroundImage = global::CarryGO.Properties.Resources.helpScreen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(880, 490);
+            this.Controls.Add(this.buttonEnter);
             this.Controls.Add(this.labelError);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -226,5 +248,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelError;
+        private System.Windows.Forms.Button buttonEnter;
     }
 }

@@ -69,6 +69,7 @@ namespace CarryGO
             this.buttonEnter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.buttonEnter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.buttonEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.buttonEnter.Location = new System.Drawing.Point(544, 301);
             this.buttonEnter.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEnter.Name = "buttonEnter";

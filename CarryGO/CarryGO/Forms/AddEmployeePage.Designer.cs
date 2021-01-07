@@ -32,9 +32,11 @@ namespace CarryGO
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEmployeePage));
             this.GenderComboBox = new System.Windows.Forms.ComboBox();
+            this.employeeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.carryGODBDataSet = new CarryGO.CarryGODBDataSet2();
+            this.genderBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carryGODBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.carryGODBDataSet = new CarryGO.CarryGODBDataSet2();
             this.genderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.PasswordBox = new System.Windows.Forms.TextBox();
@@ -61,6 +63,8 @@ namespace CarryGO
             this.buttonAddEmployee = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.DepartmentComboBox = new System.Windows.Forms.ComboBox();
+            this.employeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.genderTableAdapter = new CarryGO.CarryGODBDataSetTableAdapters.GenderTableAdapter();
             this.departmentTableAdapter = new CarryGO.CarryGODBDataSetTableAdapters.DepartmentTableAdapter();
@@ -87,16 +91,16 @@ namespace CarryGO
             this.IDBox = new System.Windows.Forms.TextBox();
             this.buttonSearchById2 = new System.Windows.Forms.PictureBox();
             this.errorLabel = new System.Windows.Forms.Label();
-            this.departmentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.departmentTableAdapter1 = new CarryGO.CarryGODBDataSet2TableAdapters.DepartmentTableAdapter();
-            this.employeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.employeeTableAdapter1 = new CarryGO.CarryGODBDataSet2TableAdapters.EmployeeTableAdapter();
-            this.genderBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.genderTableAdapter2 = new CarryGO.CarryGODBDataSet2TableAdapters.GenderTableAdapter();
-            this.employeeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.departmentBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.employeeBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carryGODBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carryGODBDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carryGODBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -107,6 +111,8 @@ namespace CarryGO
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonAddEmployee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonUpdateEmployee)).BeginInit();
@@ -116,10 +122,8 @@ namespace CarryGO
             ((System.ComponentModel.ISupportInitialize)(this.buttonSearchById)).BeginInit();
             this.panelSearchID.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonSearchById2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // GenderComboBox
@@ -136,6 +140,21 @@ namespace CarryGO
             this.GenderComboBox.TabIndex = 49;
             this.GenderComboBox.ValueMember = "GenderID";
             // 
+            // employeeBindingSource2
+            // 
+            this.employeeBindingSource2.DataMember = "Employee";
+            this.employeeBindingSource2.DataSource = this.carryGODBDataSet;
+            // 
+            // carryGODBDataSet
+            // 
+            this.carryGODBDataSet.DataSetName = "CarryGODBDataSet";
+            this.carryGODBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // genderBindingSource1
+            // 
+            this.genderBindingSource1.DataMember = "Gender";
+            this.genderBindingSource1.DataSource = this.carryGODBDataSet;
+            // 
             // employeeBindingSource
             // 
             this.employeeBindingSource.DataMember = "Employee";
@@ -145,11 +164,6 @@ namespace CarryGO
             // 
             this.carryGODBDataSetBindingSource.DataSource = this.carryGODBDataSet;
             this.carryGODBDataSetBindingSource.Position = 0;
-            // 
-            // carryGODBDataSet
-            // 
-            this.carryGODBDataSet.DataSetName = "CarryGODBDataSet";
-            this.carryGODBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // genderBindingSource
             // 
@@ -438,8 +452,8 @@ namespace CarryGO
             // 
             // DepartmentComboBox
             // 
-            this.DepartmentComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.employeeBindingSource1, "DepartmentID", true));
-            this.DepartmentComboBox.DataSource = this.departmentBindingSource1;
+            this.DepartmentComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.employeeBindingSource3, "DepartmentID", true));
+            this.DepartmentComboBox.DataSource = this.departmentBindingSource2;
             this.DepartmentComboBox.DisplayMember = "DepartmentName";
             this.DepartmentComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.DepartmentComboBox.FormattingEnabled = true;
@@ -450,6 +464,16 @@ namespace CarryGO
             this.DepartmentComboBox.TabIndex = 58;
             this.DepartmentComboBox.ValueMember = "DepartmentID";
             this.DepartmentComboBox.SelectedIndexChanged += new System.EventHandler(this.DepartmentComboBox_SelectedIndexChanged);
+            // 
+            // employeeBindingSource1
+            // 
+            this.employeeBindingSource1.DataMember = "Employee";
+            this.employeeBindingSource1.DataSource = this.carryGODBDataSet;
+            // 
+            // departmentBindingSource1
+            // 
+            this.departmentBindingSource1.DataMember = "Department";
+            this.departmentBindingSource1.DataSource = this.carryGODBDataSet;
             // 
             // departmentBindingSource
             // 
@@ -728,37 +752,27 @@ namespace CarryGO
             this.errorLabel.Size = new System.Drawing.Size(0, 25);
             this.errorLabel.TabIndex = 68;
             // 
-            // departmentBindingSource1
-            // 
-            this.departmentBindingSource1.DataMember = "Department";
-            this.departmentBindingSource1.DataSource = this.carryGODBDataSet;
-            // 
             // departmentTableAdapter1
             // 
             this.departmentTableAdapter1.ClearBeforeFill = true;
-            // 
-            // employeeBindingSource1
-            // 
-            this.employeeBindingSource1.DataMember = "Employee";
-            this.employeeBindingSource1.DataSource = this.carryGODBDataSet;
             // 
             // employeeTableAdapter1
             // 
             this.employeeTableAdapter1.ClearBeforeFill = true;
             // 
-            // genderBindingSource1
-            // 
-            this.genderBindingSource1.DataMember = "Gender";
-            this.genderBindingSource1.DataSource = this.carryGODBDataSet;
-            // 
             // genderTableAdapter2
             // 
             this.genderTableAdapter2.ClearBeforeFill = true;
             // 
-            // employeeBindingSource2
+            // departmentBindingSource2
             // 
-            this.employeeBindingSource2.DataMember = "Employee";
-            this.employeeBindingSource2.DataSource = this.carryGODBDataSet;
+            this.departmentBindingSource2.DataMember = "Department";
+            this.departmentBindingSource2.DataSource = this.carryGODBDataSet;
+            // 
+            // employeeBindingSource3
+            // 
+            this.employeeBindingSource3.DataMember = "Employee";
+            this.employeeBindingSource3.DataSource = this.carryGODBDataSet;
             // 
             // AddEmployeePage
             // 
@@ -812,9 +826,11 @@ namespace CarryGO
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddEmployeePage";
             this.Load += new System.EventHandler(this.AddEmployeePage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carryGODBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carryGODBDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carryGODBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -825,6 +841,8 @@ namespace CarryGO
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonAddEmployee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buttonUpdateEmployee)).EndInit();
@@ -835,10 +853,8 @@ namespace CarryGO
             this.panelSearchID.ResumeLayout(false);
             this.panelSearchID.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonSearchById2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.genderBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -908,5 +924,7 @@ namespace CarryGO
         private System.Windows.Forms.BindingSource genderBindingSource1;
         private CarryGODBDataSet2TableAdapters.GenderTableAdapter genderTableAdapter2;
         private System.Windows.Forms.BindingSource employeeBindingSource2;
+        private System.Windows.Forms.BindingSource employeeBindingSource3;
+        private System.Windows.Forms.BindingSource departmentBindingSource2;
     }
 }

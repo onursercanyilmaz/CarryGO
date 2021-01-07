@@ -46,7 +46,7 @@ namespace CarryGO
                 int password = int.Parse(PasswordBox.Text.Trim().ToString());
                 string address = AddressBox.Text.Trim();
                 long phone = long.Parse(PhoneBox.Text.Trim().ToString());
-                object departmentID = DepartmentComboBox.SelectedValue;
+                var departmentID = DepartmentComboBox.SelectedValue;
                
 
                 if (!ValidateEmail(email))
@@ -79,8 +79,10 @@ namespace CarryGO
             // TODO: This line of code loads data into the 'carryGODBDataSet.Department' table. You can move, or remove it, as needed.
             this.departmentTableAdapter1.Fill(this.carryGODBDataSet.Department);
 
+            DepartmentComboBox.ValueMember = "DepartmentID";
+            DepartmentComboBox.DisplayMember = "DepartmentName";
 
-          
+
         }
 
         private void buttonGoBack_Click(object sender, EventArgs e)
@@ -114,9 +116,18 @@ namespace CarryGO
 
         private void buttonViewEmployee_Click(object sender, EventArgs e)
         {
+            try
+            {
+                employee.View(dataEmployee);
+                errorLabel.Text = " ";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                
+            }
             //show the Employee table on the data grid view
-            employee.View(dataEmployee);
-            errorLabel.Text = " ";
+           
         }
 
         private void buttonSearchById_Click(object sender, EventArgs e)

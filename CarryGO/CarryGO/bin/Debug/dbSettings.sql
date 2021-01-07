@@ -1,0 +1,289 @@
+USE [master]
+GO
+/****** Object:  Database [dbName]    Script Date: 7.01.2021 00:20:34 ******/
+CREATE DATABASE [dbName]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'CarryGODB', FILENAME = N'{primaryDbFile}.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'CarryGODB_log', FILENAME = N'{logDbFile}_logprimary.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+GO
+ALTER DATABASE [dbName] SET COMPATIBILITY_LEVEL = 130
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [dbName].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [dbName] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [dbName] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [dbName] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [dbName] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [dbName] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [dbName] SET AUTO_CLOSE ON 
+GO
+ALTER DATABASE [dbName] SET AUTO_SHRINK ON 
+GO
+ALTER DATABASE [dbName] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [dbName] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [dbName] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [dbName] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [dbName] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [dbName] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [dbName] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [dbName] SET  ENABLE_BROKER 
+GO
+ALTER DATABASE [dbName] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [dbName] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [dbName] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [dbName] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [dbName] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [dbName] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [dbName] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [dbName] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [dbName] SET  MULTI_USER 
+GO
+ALTER DATABASE [dbName] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [dbName] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [dbName] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [dbName] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [dbName] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [dbName] SET QUERY_STORE = OFF
+GO
+USE [dbName]
+GO
+ALTER DATABASE SCOPED CONFIGURATION SET LEGACY_CARDINALITY_ESTIMATION = OFF;
+GO
+ALTER DATABASE SCOPED CONFIGURATION SET MAXDOP = 0;
+GO
+ALTER DATABASE SCOPED CONFIGURATION SET PARAMETER_SNIFFING = ON;
+GO
+ALTER DATABASE SCOPED CONFIGURATION SET QUERY_OPTIMIZER_HOTFIXES = OFF;
+GO
+USE [dbName]
+GO
+/****** Object:  Table [dbo].[Billing]    Script Date: 7.01.2021 00:20:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Billing](
+	[BillingID] [int] IDENTITY(1,1) NOT NULL,
+	[PaymentID] [int] NOT NULL,
+	[CustomerID] [int] NOT NULL,
+	[Price] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[BillingID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Cargo]    Script Date: 7.01.2021 00:20:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Cargo](
+	[CargoID] [int] IDENTITY(1,1) NOT NULL,
+	[TransactionID] [int] NOT NULL,
+	[BillingID] [int] NOT NULL,
+	[CustomerID] [int] NOT NULL,
+	[EnquiryID] [nvarchar](50) NOT NULL,
+	[Sender] [nvarchar](50) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[CargoID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Customer]    Script Date: 7.01.2021 00:20:34 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Customer](
+	[CustomerID] [int] IDENTITY(1,1) NOT NULL,
+	[CustomerName] [nvarchar](50) NOT NULL,
+	[CustomerLastName] [nvarchar](50) NOT NULL,
+	[CustomerPhone] [decimal](18, 0) NOT NULL,
+	[CustomerAddress] [text] NOT NULL,
+	[CustomerEmail] [nvarchar](50) NOT NULL,
+	[CustomerGender] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[CustomerID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Department]    Script Date: 7.01.2021 00:20:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Department](
+	[DepartmentID] [int] IDENTITY(1,1) NOT NULL,
+	[DepartmentName] [nvarchar](50) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[DepartmentID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Employee]    Script Date: 7.01.2021 00:20:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Employee](
+	[EmployeeID] [int] IDENTITY(100,1) NOT NULL,
+	[FirstName] [nvarchar](50) NOT NULL,
+	[LastName] [nvarchar](50) NOT NULL,
+	[EmployeeGender] [int] NOT NULL,
+	[EmployeeEmail] [nvarchar](50) NOT NULL,
+	[EmployeePassword] [int] NOT NULL,
+	[EmployeeAddress] [text] NOT NULL,
+	[EmployeePhone] [decimal](18, 0) NOT NULL,
+	[DepartmentID] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[EmployeeID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Gender]    Script Date: 7.01.2021 00:20:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Gender](
+	[GenderID] [int] IDENTITY(1,1) NOT NULL,
+	[GenderName] [nchar](10) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[GenderID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Payment]    Script Date: 7.01.2021 00:20:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Payment](
+	[PaymentID] [int] IDENTITY(1,1) NOT NULL,
+	[PaymentName] [nvarchar](50) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[PaymentID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Transactions]    Script Date: 7.01.2021 00:20:35 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Transactions](
+	[TransactionID] [int] IDENTITY(1,1) NOT NULL,
+	[TransactionName] [nvarchar](50) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[TransactionID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Billing]  WITH CHECK ADD  CONSTRAINT [FK_Billing_Customer] FOREIGN KEY([CustomerID])
+REFERENCES [dbo].[Customer] ([CustomerID])
+GO
+ALTER TABLE [dbo].[Billing] CHECK CONSTRAINT [FK_Billing_Customer]
+GO
+ALTER TABLE [dbo].[Billing]  WITH CHECK ADD  CONSTRAINT [FK_Billing_Payment] FOREIGN KEY([PaymentID])
+REFERENCES [dbo].[Payment] ([PaymentID])
+GO
+ALTER TABLE [dbo].[Billing] CHECK CONSTRAINT [FK_Billing_Payment]
+GO
+ALTER TABLE [dbo].[Cargo]  WITH CHECK ADD  CONSTRAINT [FK_Cargo_Billing] FOREIGN KEY([BillingID])
+REFERENCES [dbo].[Billing] ([BillingID])
+GO
+ALTER TABLE [dbo].[Cargo] CHECK CONSTRAINT [FK_Cargo_Billing]
+GO
+ALTER TABLE [dbo].[Cargo]  WITH CHECK ADD  CONSTRAINT [FK_Cargo_Customer] FOREIGN KEY([CustomerID])
+REFERENCES [dbo].[Customer] ([CustomerID])
+GO
+ALTER TABLE [dbo].[Cargo] CHECK CONSTRAINT [FK_Cargo_Customer]
+GO
+ALTER TABLE [dbo].[Cargo]  WITH CHECK ADD  CONSTRAINT [FK_Cargo_Transaction] FOREIGN KEY([TransactionID])
+REFERENCES [dbo].[Transactions] ([TransactionID])
+GO
+ALTER TABLE [dbo].[Cargo] CHECK CONSTRAINT [FK_Cargo_Transaction]
+GO
+ALTER TABLE [dbo].[Customer]  WITH CHECK ADD  CONSTRAINT [FK_Customer_Gender] FOREIGN KEY([CustomerGender])
+REFERENCES [dbo].[Gender] ([GenderID])
+GO
+ALTER TABLE [dbo].[Customer] CHECK CONSTRAINT [FK_Customer_Gender]
+GO
+ALTER TABLE [dbo].[Employee]  WITH CHECK ADD  CONSTRAINT [FK_Employee_Department] FOREIGN KEY([DepartmentID])
+REFERENCES [dbo].[Department] ([DepartmentID])
+GO
+ALTER TABLE [dbo].[Employee] CHECK CONSTRAINT [FK_Employee_Department]
+GO
+ALTER TABLE [dbo].[Employee]  WITH CHECK ADD  CONSTRAINT [FK_Employee_Gender] FOREIGN KEY([EmployeeGender])
+REFERENCES [dbo].[Gender] ([GenderID])
+GO
+ALTER TABLE [dbo].[Employee] CHECK CONSTRAINT [FK_Employee_Gender]
+GO
+INSERT INTO Department(DepartmentName) VALUES ('Delivery')
+GO
+INSERT INTO Department(DepartmentName) VALUES ('Air Freight')
+GO
+INSERT INTO Department(DepartmentName) VALUES ('Ship Freight')
+GO
+INSERT INTO Department(DepartmentName) VALUES ('Highway Freight')
+GO
+INSERT INTO Department(DepartmentName) VALUES ('IT')
+GO
+INSERT INTO Gender(GenderName) VALUES ('Male')
+GO
+INSERT INTO Gender(GenderName) VALUES ('Female')
+GO
+INSERT INTO Transactions(TransactionName) VALUES ('In Process')
+GO
+INSERT INTO Transactions(TransactionName) VALUES ('On Delivery')
+GO
+INSERT INTO Transactions(TransactionName) VALUES ('Delivered')
+GO
+INSERT INTO Payment(PaymentName) VALUES ('Credit Card')
+GO
+INSERT INTO Payment(PaymentName) VALUES ('Cash')
+GO
+INSERT INTO Payment(PaymentName) VALUES ('Bitcoin')
+GO
+USE [master]
+GO
+ALTER DATABASE [dbName] SET  READ_WRITE 
+GO

@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
+            this.btnCustomer = new System.Windows.Forms.Button();
             this.btnEnquiry = new System.Windows.Forms.Button();
             this.btnDelivered = new System.Windows.Forms.Button();
             this.btnInTransaction = new System.Windows.Forms.Button();
@@ -40,6 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.errorLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -59,8 +60,9 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(50)))), ((int)(((byte)(72)))));
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.errorLabel);
             this.splitContainer1.Panel1.Controls.Add(this.btnAbout);
+            this.splitContainer1.Panel1.Controls.Add(this.btnCustomer);
             this.splitContainer1.Panel1.Controls.Add(this.btnEnquiry);
             this.splitContainer1.Panel1.Controls.Add(this.btnDelivered);
             this.splitContainer1.Panel1.Controls.Add(this.btnInTransaction);
@@ -79,33 +81,10 @@
             this.splitContainer1.SplitterDistance = 306;
             this.splitContainer1.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(50)))), ((int)(((byte)(72)))));
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Coral;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Cooper Black", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Coral;
-            this.button1.Location = new System.Drawing.Point(0, 871);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(35, 9, 9, 9);
-            this.button1.Size = new System.Drawing.Size(306, 104);
-            this.button1.TabIndex = 8;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // btnAbout
             // 
             this.btnAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(50)))), ((int)(((byte)(72)))));
-            this.btnAbout.BackgroundImage = global::CarryGO.Properties.Resources.WELCOME4;
+            this.btnAbout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAbout.BackgroundImage")));
             this.btnAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAbout.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAbout.FlatAppearance.BorderColor = System.Drawing.Color.Coral;
@@ -116,15 +95,39 @@
             this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbout.Font = new System.Drawing.Font("Cooper Black", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbout.ForeColor = System.Drawing.Color.Coral;
-            this.btnAbout.Location = new System.Drawing.Point(0, 767);
+            this.btnAbout.Location = new System.Drawing.Point(0, 871);
             this.btnAbout.Margin = new System.Windows.Forms.Padding(0);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Padding = new System.Windows.Forms.Padding(35, 9, 9, 9);
             this.btnAbout.Size = new System.Drawing.Size(306, 104);
-            this.btnAbout.TabIndex = 6;
+            this.btnAbout.TabIndex = 8;
             this.btnAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAbout.UseVisualStyleBackColor = false;
-            this.btnAbout.Click += new System.EventHandler(this.btnCustomerDetails_Click);
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click_1);
+            // 
+            // btnCustomer
+            // 
+            this.btnCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(50)))), ((int)(((byte)(72)))));
+            this.btnCustomer.BackgroundImage = global::CarryGO.Properties.Resources.WELCOME4;
+            this.btnCustomer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCustomer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCustomer.FlatAppearance.BorderColor = System.Drawing.Color.Coral;
+            this.btnCustomer.FlatAppearance.BorderSize = 2;
+            this.btnCustomer.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnCustomer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCustomer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomer.Font = new System.Drawing.Font("Cooper Black", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomer.ForeColor = System.Drawing.Color.Coral;
+            this.btnCustomer.Location = new System.Drawing.Point(0, 767);
+            this.btnCustomer.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.Padding = new System.Windows.Forms.Padding(35, 9, 9, 9);
+            this.btnCustomer.Size = new System.Drawing.Size(306, 104);
+            this.btnCustomer.TabIndex = 6;
+            this.btnCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCustomer.UseVisualStyleBackColor = false;
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomerDetails_Click);
             // 
             // btnEnquiry
             // 
@@ -283,6 +286,16 @@
             this.panel1.Size = new System.Drawing.Size(998, 1055);
             this.panel1.TabIndex = 0;
             // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.BackColor = System.Drawing.Color.Transparent;
+            this.errorLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.errorLabel.Location = new System.Drawing.Point(3, 0);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 17);
+            this.errorLabel.TabIndex = 9;
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -317,10 +330,11 @@
         private System.Windows.Forms.Button btnDelivered;
         private System.Windows.Forms.Button btnInTransaction;
         private System.Windows.Forms.Button btnNewCargo;
-        private System.Windows.Forms.Button btnAbout;
+        private System.Windows.Forms.Button btnCustomer;
         private System.Windows.Forms.Button btnAnnouncements;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAbout;
+        private System.Windows.Forms.Label errorLabel;
     }
 }

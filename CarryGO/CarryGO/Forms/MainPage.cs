@@ -31,7 +31,7 @@ namespace CarryGO
             catch (Exception)
             {
 
-                throw;
+                errorLabel.Text = "Page couldn't load!";
             }
 
         }
@@ -63,7 +63,7 @@ namespace CarryGO
             catch (Exception)
             {
 
-                throw;
+                errorLabel.Text = "Page couldn't load!";
             }
         }
 
@@ -82,7 +82,7 @@ namespace CarryGO
             catch (Exception)
             {
 
-                throw;
+                errorLabel.Text = "Page couldn't load!";
             }
 
         }
@@ -100,7 +100,7 @@ namespace CarryGO
             catch (Exception)
             {
 
-                throw;
+                errorLabel.Text = "Page couldn't load!";
             }
 
         }
@@ -118,7 +118,7 @@ namespace CarryGO
             catch (Exception)
             {
 
-                throw;
+                errorLabel.Text = "Page couldn't load!";
             }
         }
 
@@ -135,7 +135,7 @@ namespace CarryGO
             catch (Exception)
             {
 
-                throw;
+                errorLabel.Text = "Page couldn't load!";
             }
         }
 
@@ -151,16 +151,11 @@ namespace CarryGO
             }
             catch (Exception)
             {
-
-                throw;
+                errorLabel.Text = "Page couldn't load!";
             }
         }
 
-        private void btnAbout_Click(object sender, EventArgs e)
-        {
-
-        }
-
+     
 
 
         private void btnAnnouncements_Click(object sender, EventArgs e)
@@ -175,8 +170,7 @@ namespace CarryGO
             }
             catch (Exception)
             {
-
-                throw;
+                errorLabel.Text = "Page couldn't load!";
             }
         }
 
@@ -194,6 +188,23 @@ namespace CarryGO
         private void billingBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAbout_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                updateBorders(((Button)sender).Name);
+                ucAbout uc = new ucAbout();
+                uc.Dock = DockStyle.Fill;
+                panelContent.Controls.Clear();
+                panelContent.Controls.Add(uc);
+            }
+            catch (Exception)
+            {
+
+                errorLabel.Text = "Page couldn't load!";
+            }
         }
     }
 }
